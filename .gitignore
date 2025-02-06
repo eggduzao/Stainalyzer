@@ -1,3 +1,13 @@
+# Initial Examples
+examples/help
+examples/input
+examples/kernels
+examples/kernels_with_posteriors
+examples/methodology
+examples/output
+examples/Figure_1.png
+examples/Neila-HSV.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
