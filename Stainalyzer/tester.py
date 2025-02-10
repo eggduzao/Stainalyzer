@@ -10,22 +10,12 @@ Tester
 import io
 import os
 import cv2
-import math
-import struct
 import tempfile
-import argparse
 import numpy as np
 import seaborn as sns
-from math import ceil
 from time import perf_counter
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
-from scipy.spatial import KDTree
-from sklearn.cluster import KMeans
-from skimage.segmentation import slic
-from scipy.spatial.distance import cdist
-from skimage.segmentation import mark_boundaries
-from skimage.segmentation import find_boundaries
 
 ############################################################################################################
 ### Classes

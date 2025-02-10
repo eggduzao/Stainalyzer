@@ -12,19 +12,27 @@ Placeholder.
 ############################################################################################################
 
 import os
-import cv2
 import sys
+import cv2
 import random
 import openpyxl
 import numpy as np
 from scipy.linalg import sqrtm
 from collections import OrderedDict
-from scipy.stats import multivariate_normal
-from scipy.spatial.distance import mahalanobis
 
-from Stainalyzer.utils import ColorConverter, PlottingUtils, TripleInterval
-from Stainalyzer.distribution import GaussianDistribution
-from Stainalyzer.filters import DABFilters, Mask
+from .utils import ColorConverter, PlottingUtils, TripleInterval
+from .preprocessor import ImagePreprocessor
+from .distribution import GaussianDistribution
+from .filters import DABFilters, Mask
+
+############################################################################################################
+### Constants
+############################################################################################################
+
+# Constants
+SEED = 1987
+random.seed(SEED)
+np.random.seed(SEED)
 
 ############################################################################################################
 ### Classes
@@ -412,7 +420,7 @@ class Trainer:
         Iterates over images in the training_image_path, calling training_iteration().
     """
 
-    def __init__(self, dab_distribution=None, training_image_path=None, severity=None):
+    def __init__(self, dab_distribution=None, training_image_path=None, severity=None, root_name=None):
         """
         Initializes the Trainer object with a DABDistribution instance, training image path, and severity parameter.
 
@@ -429,6 +437,7 @@ class Trainer:
         self.dab_distribution = dab_distribution if dab_distribution is not None else DABDistribution()
         self.training_image_path = training_image_path if training_image_path is not None else None
         self.severity = severity if severity is not None else None
+        self.root_name = root_name if root_name is not None else None
         self._plotting_utils = PlottingUtils()
 
     def get_dab_distribution(self):
@@ -728,7 +737,42 @@ class Trainer:
 
         return foreground_mask, tissue_mask, background_mask
 
+    def remove_annotation(self, image, threshold=3, color_space="BGR"):
+        """
+        This method removes annotation (pure black) from the image by substituting it by its
+        nearest neighbor color.
+
+        Parameters
+        ----------
+        name : str
+            The current mask's name.
+        color_space : str
+            The color mode of the image. (Defaults to 'BGR')
+
+        Returns
+        ------
+        weighted_vec : Tuple
+            A tuple with three weights that sum to one.
+        """
+        image_preprocessor = ImagePreprocessor(image)
+        image_preprocessor.replace_black_pixels(black_threshold=threshold, color_space=color_space)
+        return image_preprocessor.original_image
+
     def get_mask_weights(self, name):
+        """
+        This method returns the corresponding tuple with three weights that sum to one, in the format:
+        (foreground_weight, tissue_weight, background_weight)
+
+        Parameters
+        ----------
+        name : str
+            The current mask's name.
+
+        Returns
+        ------
+        weighted_vec : Tuple
+            A tuple with three weights that sum to one.
+        """
 
         weighted_vec = (0.0, 0.0, 0.0)
 
@@ -862,10 +906,11 @@ class Trainer:
             raise ValueError(f"Training image '{original_image}' is not properly formatted.")
 
         ########################################################################################################
-        # Step 1: Convert image to BGR
+        # Step 1: Convert image to BGR and remove annotation
         ########################################################################################################
 
         original_image = ColorConverter.convert_any_to_bgr(original_image, image_mode=image_mode)
+        original_image = self.remove_annotation(original_image, threshold=3, color_space="BGR")
 
         ########################################################################################################
         # Step 2: Convert image to HSV
@@ -981,18 +1026,54 @@ class Trainer:
 
         # Write Summary Row in Excel
         summary_data = [
+
+            # Total Forward Weighted Pixels, Total Tissue Weighted Pixels, Total Background Weighted Pixels
             *total_weighted_pixel_vec,
-            total_weighted_pixel_vec[0] / total_weighted_pixel_vec[1] if total_weighted_pixel_vec[1] else 0,
-            total_weighted_pixel_vec[0] / (total_weighted_pixel_vec[1] + total_weighted_pixel_vec[2]) if total_weighted_pixel_vec[1] + total_weighted_pixel_vec[2] else 0,
-            total_weighted_pixel_vec[0] / total_weighted_pixel_vec_sum if total_weighted_pixel_vec_sum else 0,
+
+            # Weighted Forward to Tissue (%)
+            round(
+                (total_weighted_pixel_vec[0] / total_weighted_pixel_vec[1]) * 100, 4
+            ) if total_weighted_pixel_vec[1] else 0,
+            # Weighted Forward To Background (%)
+            round(
+                (total_weighted_pixel_vec[0] / total_weighted_pixel_vec[2]) * 100, 4
+            ) if total_weighted_pixel_vec[2] else 0,
+            # Weighted Forward To Tissue+Background (%)
+            round(
+                (total_weighted_pixel_vec[0] / (total_weighted_pixel_vec[1] + total_weighted_pixel_vec[2])) * 100, 4
+            ) if total_weighted_pixel_vec[1] + total_weighted_pixel_vec[2] else 0,
+            # Weighted Forward To All (%)
+            round(
+                (total_weighted_pixel_vec[0] / total_weighted_pixel_vec_sum) * 100, 4
+            ) if total_weighted_pixel_vec_sum else 0,
+            
+            # Weighted Total (Pixels)
             total_weighted_pixel_vec_sum,
+
+            # Total Forward (Pixels), Total Tissue (Pixels), Total Background (Pixels)
             *total_pixel_vec,
-            total_pixel_vec[0] / total_pixel_vec[1] if total_pixel_vec[1] else 0,
-            total_pixel_vec[0] / (total_pixel_vec[1] + total_pixel_vec[2]) if total_pixel_vec[1] + total_pixel_vec[2] else 0,
-            total_pixel_vec[0] / total_pixel_vec_sum if total_pixel_vec_sum else 0,
+
+            # Forward to Tissue (%)
+            round((total_pixel_vec[0] / total_pixel_vec[1]) * 100, 4) if total_pixel_vec[1] else 0,
+            # Forward To Background (%)
+            round((total_pixel_vec[0] / total_pixel_vec[2]) * 100, 4) if total_pixel_vec[2] else 0,
+            # Forward To Tissue+Background (%)
+            round(
+                (total_pixel_vec[0] / (total_pixel_vec[1] + total_pixel_vec[2])) * 100, 4
+            ) if total_pixel_vec[1] + total_pixel_vec[2] else 0,
+            # Forward To All (%)
+            round((total_pixel_vec[0] / total_pixel_vec_sum) * 100, 4) if total_pixel_vec_sum else 0,
+
+            # Total (Pixels)
             total_pixel_vec_sum,
+
+            # Forward HSV Distribution
             *meanvec[0], *covvec[0].flatten(),
+
+            # Tissue HSV Distribution
             *meanvec[1], *covvec[1].flatten(),
+
+            # Background HSV Distribution
             *meanvec[2], *covvec[2].flatten()
         ]
 
@@ -1009,7 +1090,7 @@ class Trainer:
 
         return iteration + 1
 
-    def train(self, output_location=None): # TODO
+    def train(self, output_location=None):
         """
         This method will process a path, updating self.dab_distribution with each image's DAB content.
 
@@ -1025,10 +1106,10 @@ class Trainer:
             raise FileNotFoundError(f"Training image path '{self.training_image_path}' does not exist.")
 
         workbook = None
-        excel_file_name=None
+        excel_file_name = None
         if output_location is not None:
 
-            if not os.path.exists(self.training_image_path):
+            if not os.path.exists(output_location):
                 try:
                     os.makedirs(output_location, exist_ok=True)
                 except Exception:
@@ -1048,11 +1129,12 @@ class Trainer:
 
             # Writing first line header
             sheet = workbook.active
-            data_to_write = ["Total Forward Weighted Pixels", "Total Tissue Weighted Pixels", "Total Background Weighted Pixels",
-                             "Weighted Forward to Tissue (%)", "Weighted Forward To Tissue (%)", "Weighted Forward To All (%)",
-                             "Weighted Total Pixels",
-                             "Total Forward (Pixels)", "Total Tissue (Pixels)", "total_background (Pixels)",
-                             "Forward to Tissue (%)", "Forward To Tissue (%)", "Forward To All (%)", "Total (Pixels)",
+            data_to_write = ["Total Forward Weighted (Pixels)", "Total Tissue Weighted (Pixels)", "Total Background Weighted (Pixels)",
+                             "Weighted Forward to Tissue (%)", "Weighted Forward To Background (%)", 
+                             "Weighted Forward To Tissue+Background (%)", "Weighted Forward To All (%)", "Weighted Total (Pixels)",
+                             "Total Forward (Pixels)", "Total Tissue (Pixels)", "Total Background (Pixels)",
+                             "Forward to Tissue (%)", "Forward To Background (%)", "Forward To Tissue+Background (%)", 
+                             "Forward To All (%)", "Total (Pixels)",
                              "Average Forward Hue (H)", "Average Forward Saturation (S)", "Average Forward Value (V)", 
                              "Cov Forward HH", "Cov Forward HS", "Cov Forward HV",
                              "Cov Forward SH", "Cov Forward SS", "Cov Forward SV",
@@ -1068,33 +1150,52 @@ class Trainer:
             for col, value in enumerate(data_to_write, start=1):
                 sheet.cell(row=1, column=col, value=value)
 
-        counter = 1
-        for image_file in os.listdir(self.training_image_path):
+        counter = 2
+        for dirpath, dirnames, filenames in os.walk(self.training_image_path):
 
-            # If not an image in TIFF format continue to next
-            if not image_file.lower().endswith(".tiff"):
-                continue
+            for image_file in filenames:
 
-            # Count Iteration
-            counter += 1
+                # If not an image in TIFF format continue to next
+                if not image_file.lower().endswith(".tiff"):
+                    continue
 
-            # Image path
-            image_path = os.path.join(self.training_image_path, image_file)
-
-            if excel_file_name is not None:
-                sheet = workbook.active
-                sheet.cell(row=counter, column=1, value="File Name:")
-                sheet.cell(row=counter, column=2, value=image_file)
-
-            # Perform training
-            if os.path.isfile(image_path):
-                image = cv2.imread(image_path)
+                # Count Iteration
                 counter += 1
-                counter = self.training_iteration(image, counter, plot_location=output_location, file_name=image_file, workbook=workbook)
 
-            if excel_file_name is not None:
-                sheet = workbook.active
-                sheet.cell(row=counter, column=1, value=" ")
+                # Image path
+                image_path = os.path.join(dirpath, image_file)
+                after_root = image_path.split(self.root_name + os.sep, 1)[1]
+
+                # Split the remaining path into components
+                path_components = after_root.split(os.sep)
+                image_file_name = os.path.splitext(image_file)[0]
+
+                if excel_file_name is not None:
+                    sheet = workbook.active
+                    for col, path_component in enumerate(["File Name:", self.root_name] + path_components, start=1):
+                        sheet.cell(row=counter, column=col, value=path_component)
+
+                # Create output location tree-wise
+                treewise_output_location = os.path.join(output_location, *path_components[:-1])
+                try:
+                    os.makedirs(treewise_output_location, exist_ok=True)
+                except Exception:
+                    raise ValueError("Output location {treewise_output_location} is incorrect and cannot be created.")
+
+                # Perform training
+                if os.path.isfile(image_path):
+                    image = cv2.imread(image_path)
+                    counter += 1
+                    counter = self.training_iteration(image,
+                                                      counter,
+                                                      plot_location=treewise_output_location,
+                                                      file_name=image_file_name,
+                                                      workbook=workbook
+                                                      )
+
+                if excel_file_name is not None:
+                    sheet = workbook.active
+                    sheet.cell(row=counter, column=1, value=" ")
 
         if excel_file_name is not None:
             workbook.save(excel_file_name)

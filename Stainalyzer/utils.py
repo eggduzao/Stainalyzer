@@ -10,22 +10,11 @@ Utilities
 import io
 import os
 import cv2
-import math
-import struct
 import colour
 import tempfile
-import argparse
 import numpy as np
-import seaborn as sns
-from math import ceil
-from typing import List, Tuple
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
-from scipy.spatial import KDTree
-from sklearn.cluster import KMeans
-from skimage.segmentation import slic
-from scipy.spatial.distance import cdist
-from skimage.segmentation import mark_boundaries
 from skimage.segmentation import find_boundaries
 from scipy.ndimage import gaussian_filter1d
 
@@ -806,7 +795,6 @@ class ColorConverter:
             munsell_image.append(munsell_row)
 
         return munsell_image
-
 
 class TripleInterval:
     """

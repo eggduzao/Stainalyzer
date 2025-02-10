@@ -4,7 +4,7 @@
 LOCAL_PATH="/Users/egg/Projects/Stainalyzer/data"
 REMOTE_USER="egusmao"
 REMOTE_HOST="192.168.25.2"
-REMOTE_PATH="/storage2/egusmao/projects"
+REMOTE_PATH="/storage2/egusmao/projects/Stainalyzer"
 DIRECTION=$1  # 'send' or 'receive'
 
 # Rsync options

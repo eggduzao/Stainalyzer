@@ -90,7 +90,7 @@ class ImagePreprocessor:
         self.centroids = None
         self.pixel_counts = None
         self.cluster_labels = None
-        self._replace_black_param = replace_black_param or {'color_space': "BGR"}
+        self._replace_black_param = replace_black_param or {'black_threshold': 3, 'color_space': "BGR"}
         self._clahe_params = clahe_params or {'color_scheme': "LAB", 'clipLimit': 2.0, 'tileGridSize': (8, 8), 'return_threshold':False}
         self._slic_params = slic_params or {'n_segments': 250, 'compactness': 10, 'start_label': 0}
         self._kmeans_params = kmeans_params or {'n_clusters': 10, 'random_state': 42}
@@ -98,7 +98,7 @@ class ImagePreprocessor:
     # Full preprocessingpipeline
     def preprocess(self):
         """Run the full preprocessing pipeline."""
-        self.replace_black_pixels()
+        self.replace_black_pixels(black_threshold=self._replace_black_param["black_threshold"])
         self.apply_clahe(return_threshold=True)
         self.apply_slic(
                         n_segments = self.dynamic_threshold * self._slic_params["n_segments"],
@@ -110,7 +110,7 @@ class ImagePreprocessor:
                           )
 
     # Replace Black Pixels By Closest Non-black Neighbor
-    def replace_black_pixels(self, color_space=None):
+    def replace_black_pixels(self, black_threshold=None, color_space=None):
         """
         Replace black pixels in self.original_image with the nearest non-black pixel in the specified color space.
 
@@ -120,6 +120,7 @@ class ImagePreprocessor:
 
         # Parameter processing
         if color_space is None:
+            black_threshold = self._replace_black_param["black_threshold"]
             color_space = self._replace_black_param["color_space"]
 
         # Convert self.original_image to the specified color space
@@ -137,17 +138,15 @@ class ImagePreprocessor:
                             (f"Use 'BGR', 'RGB', 'HSV', or 'LAB'.")
                             )
 
-        # Find coordinates of non-black pixels
-        height, width, channels = converted_image.shape
-        non_black_coords = np.array(
-            [(x, y) for x in range(height) for y in range(width) if not np.all(converted_image[x, y] == [0, 0, 0])]
-        )
-        non_black_pixels = np.array([converted_image[x, y] for x, y in non_black_coords])
+        # Create a mask where pixels are considered black if all BGR values are <= black_threshold
+        black_mask = np.all(converted_image <= black_threshold, axis=-1)
 
-        # Find coordinates of black pixels
-        black_coords = np.array(
-            [(x, y) for x in range(height) for y in range(width) if np.all(converted_image[x, y] == [0, 0, 0])]
-        )
+        # Get black and non-black coordinates
+        black_coords = np.argwhere(black_mask)
+        non_black_coords = np.argwhere(~black_mask)
+
+        # Extract the non-black pixel values
+        non_black_pixels = converted_image[~black_mask]
 
         # Handle case where the image contains only black pixels
         if len(non_black_coords) == 0:
@@ -155,6 +154,8 @@ class ImagePreprocessor:
 
         # Create KDTree for fast nearest-neighbor search
         tree = KDTree(non_black_coords)
+
+        # Replace black pixels with the nearest non-black pixel
         for x, y in black_coords:
             nearest_idx = tree.query([x, y])[1]
             converted_image[x, y] = non_black_pixels[nearest_idx]

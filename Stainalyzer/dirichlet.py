@@ -83,10 +83,6 @@ from sklearn.mixture import BayesianGaussianMixture
 ### Classes
 ############################################################################################################
 
-import numpy as np
-from sklearn.mixture import BayesianGaussianMixture
-import pickle
-
 class DirichletProcessMixtureModel:
     """
     A class implementing the Dirichlet Process Mixture Model (DPMM) for image quantization.

@@ -12,12 +12,11 @@ import os
 import cv2
 import tempfile
 import numpy as np
-import seaborn as sns
 from math import ceil, sqrt
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
 
-from Stainalyzer.utils import ColorName, ColorConverter, PlottingUtils
+from .utils import ColorName, ColorConverter, PlottingUtils
 
 ############################################################################################################
 ### Constants

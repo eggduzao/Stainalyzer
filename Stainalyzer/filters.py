@@ -12,26 +12,11 @@ filters
 import io
 import os
 import cv2
-import math
-import struct
-import tempfile
-import argparse
 import numpy as np
-import seaborn as sns
-from math import ceil
 from sympy import Interval
-from time import perf_counter
 from PIL import Image, ImageCms
-import matplotlib.pyplot as plt
-from scipy.spatial import KDTree
-from sklearn.cluster import KMeans
-from skimage.segmentation import slic
-from scipy.spatial.distance import cdist
-from scipy.ndimage import gaussian_filter1d
-from skimage.segmentation import mark_boundaries
-from skimage.segmentation import find_boundaries
 
-from Stainalyzer.utils import PlottingUtils, TripleInterval, ColorConverter
+from .utils import PlottingUtils, TripleInterval
 
 ############################################################################################################
 ### Classes
@@ -650,7 +635,7 @@ class Mask:
         numpy.ndarray
             The mean color values for each channel.
         """
-        
+
         # Create a mask to exclude pixels with any 0 or 255 in any channel
         valid_pixels_mask = ~np.any((image == 0) | (image == 255), axis=-1)
         valid_pixels = image[valid_pixels_mask]

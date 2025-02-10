@@ -1,10 +1,8 @@
-
 """
 core
 ----
 
-Placeholder.
-
+Parses command-line arguments and performs core processing functions for the Stainalyzer tool.
 """
 
 ############################################################################################################
@@ -13,9 +11,159 @@ Placeholder.
 
 import argparse
 
-from Stainalyzer.trainer import Trainer
+from . import __version__
+from .trainer import Trainer
+
+############################################################################################################
+### Constants
+############################################################################################################
+
+############################################################################################################
+### Argument Parsing
+############################################################################################################
+
+def parse_args():
+    """
+    Parses command-line arguments for the Stainalyzer tool.
+
+    Returns
+    -------
+    argparse.Namespace
+        An object containing the parsed command-line arguments.
+
+    Positional Arguments
+    --------------------
+    input_training_folder : str
+        Path to the input training folder.
+    output_training_folder : str
+        Path to the output training folder where results will be saved.
+    root_name : str
+        Root directory name used to structure the file paths.
+
+    Optional Arguments
+    ------------------
+    --severity : float, optional
+        Specifies the training severity. Default is 1.0.
+
+    Standard Options
+    ----------------
+    -h, --help : Show help message and exit.
+    -v, --version : Show the version of the Stainalyzer tool and exit.
+
+    Notes
+    -----
+    - Ensure that input paths are valid directories.
+    - The tool assumes images are formatted correctly within the input directory.
+    
+    """
+    parser = argparse.ArgumentParser(
+        description="Stainalyzer Tool: A robust tool for DAB-stained image analysis in microscopy.",
+        epilog="Example Usage: stainalyzer /path/to/input /path/to/output root_folder --severity 0.8"
+    )
+
+    # Positional arguments
+    parser.add_argument(
+        "input_training_folder",
+        type=str,
+        help="Path to the input training folder."
+    )
+    parser.add_argument(
+        "output_training_folder",
+        type=str,
+        help="Path to the output training folder where results will be saved."
+    )
+    parser.add_argument(
+        "root_name",
+        type=str,
+        help="Root directory name used to structure the file paths."
+    )
+
+    # Optional arguments
+    parser.add_argument(
+        "--severity",
+        type=float,
+        default=1.0,
+        help="Specifies the training severity (default: 1.0)."
+    )
+
+    # Version and Help
+    parser.add_argument(
+        "-v", "--version",
+        action="version",
+        version=f'Stainalyzer {__version__}',
+        help="Show program version and exit."
+    )
+
+    args = parser.parse_args()
+
+    # Validate arguments
+    if args.severity < 0.0 or args.severity > 1.0:
+        parser.error("--severity must be between 0.0 and 1.0.")
+
+    return args
+
+############################################################################################################
+### Core Functions
+############################################################################################################
+
+def core_function(input_training_folder, output_training_folder, root_name, training_severity=1.0):
+    """
+    Core processing function for the Stainalyzer tool.
+
+    This function initializes the `Trainer` class and starts the training process 
+    based on the provided directories and severity level.
+
+    Parameters
+    ----------
+    input_training_folder : str
+        Path to the input training folder.
+    output_training_folder : str
+        Path to the output training folder where results will be saved.
+    root_name : str
+        Root directory name used to structure the file paths.
+    training_severity : float, optional
+        Specifies the training severity (default is 1.0).
+
+    Raises
+    ------
+    FileNotFoundError
+        If the input training folder does not exist.
+    ValueError
+        If invalid parameters are provided.
+    
+    Notes
+    -----
+    The actual training logic is handled by the `Trainer` class, which processes
+    images and generates output in the specified directory.
+
+    """
+    try:
+        trainer = Trainer(
+            training_image_path=input_training_folder,
+            severity=training_severity,
+            root_name=root_name
+        )
+        trainer.train(output_location=output_training_folder)
+    except FileNotFoundError as fnf_error:
+        print(f"Error: {fnf_error}")
+    except ValueError as val_error:
+        print(f"Error: {val_error}")
+    except Exception as e:
+        print(f"Unexpected error occurred: {e}")
+
 
 """
+
+# Entry Point
+if __name__ == "__main__":
+
+    # Input Output Files
+    root_name = "DAB_Training"
+    input_training_folder = "/Users/egg/Projects/Stainalyzer/data/DAB_Training/"
+    output_training_folder = "/Users/egg/Projects/Stainalyzer/data/DAB_Training_Output"
+
+    core_function(input_training_folder, output_training_folder, root_name)
+
 import io
 import os
 import cv2
@@ -43,89 +191,6 @@ from skimage.segmentation import find_boundaries
 #from Stainalyzer.filters import DABFilters
 #from Stainalyzer.utils import ColorConverter
 """
-
-############################################################################################################
-### Constants
-############################################################################################################
-
-# Constants
-
-"""
-Image.MAX_IMAGE_PIXELS = 400_000_000  # Adjust this as needed
-SEED = 1987
-np.random.seed(SEED)
-"""
-
-############################################################################################################
-### Argument Parsing
-############################################################################################################
-
-# Argument Parsing
-def parse_args():
-    """
-    Argument Parsing.
-    This function placeholder.
-
-    Parameters:
-    ----------
-    placeholder : plchd
-        The placeholder.
-
-    Returns:
-    --------
-    Placeholder : plchd
-        The placeholder.
-     
-    Raises
-    ------
-    Placeholder
-        Placeholder. 
-    """
-    parser = argparse.ArgumentParser(description="Stainalyzer Tool")
-    parser.add_argument("--input", required=True, help="Path to input file")
-    return parser.parse_args()
-
-############################################################################################################
-### Core Functions
-############################################################################################################
-
-# Main Function
-def main_function(input_training_folder, output_training_folder):
-    """
-    Main function.
-    This function performs both training and testing of the model.
-
-    Parameters:
-    ----------
-    input_training_folder : str
-        The input folder containing training images.
-    output_training_folder : str
-        The output folder to record training objects.
-
-    Returns:
-    --------
-    Placeholder : plchd
-        The placeholder.
-     
-    Raises
-    ------
-    Placeholder
-        Placeholder. 
-    """
-
-    # Model Training
-    training_severity = 1.0
-    trainer = Trainer(training_image_path=input_training_folder, severity=training_severity)
-    trainer.train(output_location=output_training_folder)
-
-# Entry Point
-if __name__ == "__main__":
-
-    # Input Output Files
-    input_training_folder = "/Users/egg/Projects/Stainalyzer/data/DAB_Training/"
-    output_training_folder = "/Users/egg/Projects/Stainalyzer/data/DAB_Training_Output"
-
-    main_function(input_training_folder, output_training_folder)
 
 """
 

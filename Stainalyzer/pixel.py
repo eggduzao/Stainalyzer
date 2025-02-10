@@ -1,3 +1,4 @@
+
 import numpy as np
 from colorsys import rgb_to_hsv, hsv_to_rgb, rgb_to_hls, hls_to_rgb
 
@@ -489,11 +490,6 @@ class Pixel:
         name_info = f"Color Name: {self.color_name or 'Unnamed'}"
         return f"Pixel({name_info}, {coord_info}, {color_info})"
 
-
-
-
-
-
     def to_dict(self):
         """
         Serialize the pixel data to a dictionary.
@@ -510,11 +506,6 @@ class Pixel:
             "hsv": self.hsv_tuple,
             "color_name": self.color_name
         }
-
-
-
-
-
 
     def _calculate_color_distance(self, color1, color2):
         """
@@ -563,12 +554,6 @@ class Pixel:
             )
         else:
             raise ValueError("Unsupported space. Use 'rgb', 'lab', 'xyz', or 'spatial'.")
-
-
-
-
-
-
 
     def interpolate_with(self, other, factor=0.5, space='rgb'):
         """
@@ -627,8 +612,3 @@ class Pixel:
                 self.sync_colors()
         else:
             raise ValueError("Unsupported filter type. Use 'brightness', 'contrast', or 'sepia'.")
-
-
-
-
-
