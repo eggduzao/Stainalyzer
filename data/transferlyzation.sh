@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Set your variables here
-CLUSTER_USER="your_cluster_username"
-CLUSTER_ADDRESS="your.cluster.address"
-CLUSTER_PATH="/path/to/data/on/cluster"
-HOME_PATH="/path/to/data/on/home"
+CLUSTER_USER="egusmao"
+CLUSTER_ADDRESS="192.168.25.2"
+CLUSTER_PATH="/storage2/egusmao/projects/Stainalyzer/data/"
+HOME_PATH="/Users/egg/Projects/Stainalyzer/data/"
 
 # Data file name
-DATA_FILE="your_data_file.tar.gz"
+DATA_FILE="DAB_IMIP_Tratamento_Clean.tar.gz"
 
 # Function to transfer data to the cluster
 to_cluster() {
