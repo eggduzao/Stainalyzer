@@ -19,7 +19,7 @@
 # cd $PBS_O_WORKDIR
 
 # Navigate to the directory where the .def file is stored
-cd ~/Projects/Stainalyzer/data/
+cd ~/projects/Stainalyzer/data/
 
 # Uncompress Control
 ./cocoon.sh decompress ./DAB_Grupo_Controle_Clean.tar.gz
