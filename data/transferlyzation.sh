@@ -9,27 +9,27 @@ HOME_PATH="/Users/egg/Projects/Stainalyzer/data/"
 # Data file name
 DATA_FILE="DAB_IMIP_Tratamento_Clean.tar.gz"
 
-# Function to transfer data to the cluster
+# Function to transfer data to the cluster with resume capability
 to_cluster() {
-    echo "Transferring data from HOME to CLUSTER..."
-    rsync -avz "$HOME_PATH/$DATA_FILE" "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH"
+    echo "Transferring data from HOME to CLUSTER (resumable)..."
+    rsync -avP "$HOME_PATH/$DATA_FILE" "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH"
     
     if [ $? -eq 0 ]; then
         echo "Transfer to cluster completed successfully!"
     else
-        echo "Error during transfer to cluster."
+        echo "Error during transfer to cluster. You can re-run the script to resume."
     fi
 }
 
-# Function to transfer data to home
+# Function to transfer data to home with resume capability
 to_home() {
-    echo "Transferring data from CLUSTER to HOME..."
-    rsync -avz "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH/$DATA_FILE" "$HOME_PATH"
+    echo "Transferring data from CLUSTER to HOME (resumable)..."
+    rsync -avP "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH/$DATA_FILE" "$HOME_PATH"
     
     if [ $? -eq 0 ]; then
         echo "Transfer to home completed successfully!"
     else
-        echo "Error during transfer to home."
+        echo "Error during transfer to home. You can re-run the script to resume."
     fi
 }
 
