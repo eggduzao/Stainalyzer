@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#PBS -N build_singularity_basic_packages
-#PBS -o build_singularity_basic_packages.out
+#PBS -N uncompress
+#PBS -o uncompress.out
 #PBS -j oe
 
 #PBS -q workq
