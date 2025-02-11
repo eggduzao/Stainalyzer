@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#PBS -N uncompress
-#PBS -o uncompress.out
+#PBS -N uncompress_treatment
+#PBS -o uncompress_treatment.out
 #PBS -j oe
 
 #PBS -q workq
@@ -22,4 +22,4 @@
 cd ~/projects/Stainalyzer/data/
 
 # Uncompress Control
-./cocoon.sh decompress ./DAB_Grupo_Controle_Clean.tar.gz
+./cocoon.sh decompress ./DAB_IMIP_Tratamento_Clean.tar.gz
