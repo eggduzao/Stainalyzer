@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#PBS -N test_utils
+#PBS -o test_utils.out
+#PBS -j oe
+
+#PBS -q workq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=2
+#PBS -l mem=24gb
+#PBS -l walltime=04:00:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the directory where the .def file is stored
+cd ~/projects/Stainalyzer/tests/
+
+# Build the container using fakeroot
+python test_utils.py
+
