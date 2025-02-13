@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#PBS -N Fetch_Stainalyzer_Control
+#PBS -o Fetch_Stainalyzer_Control.out
+#PBS -j oe
+
+#PBS -q normq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=16gb
+#PBS -l walltime=24:00:00
+
+cd $PBS_O_WORKDIR
+
+# Build the container using fakeroot
+singularity build --fakeroot python3.12_conda.sif python3.12_conda.def
+
