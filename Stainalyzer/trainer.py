@@ -753,6 +753,11 @@ class Trainer:
         ------
         weighted_vec : Tuple
             A tuple with three weights that sum to one.
+
+        Raises
+        ------
+        ValueError
+            If the specified file is not properly formatted.
         """
         image_preprocessor = ImagePreprocessor(image)
         image_preprocessor.replace_black_pixels(black_threshold=threshold, color_space=color_space)

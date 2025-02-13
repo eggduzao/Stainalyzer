@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # Set your variables here
-LOCAL_USER="egg"  # Your local machine username
-LOCAL_ADDRESS="192.168.0.3"  # Your local machine IP address
+CLUSTER_USER="egusmao"  # Your cluster username
+CLUSTER_ADDRESS="192.168.25.2"  # Cluster IP address
 CLUSTER_PATH="/storage2/egusmao/projects/Stainalyzer/data/"
 HOME_PATH="/Users/egg/Projects/Stainalyzer/data/"
 
 # Data file name
 DATA_FILE="DAB_IMIP_Tratamento_Clean.tar.gz"
 
-# Function to pull data from home to the cluster (resumable)
+# Function to transfer data to the cluster (resumable)
 to_cluster() {
-    echo "Pulling data from HOME to CLUSTER (resumable)..."
-    rsync -avP "$LOCAL_USER@$LOCAL_ADDRESS:$HOME_PATH/$DATA_FILE" "$CLUSTER_PATH"
+    echo "Transferring data from HOME to CLUSTER (resumable)..."
+    rsync -avP "$HOME_PATH/$DATA_FILE" "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH"
     
     if [ $? -eq 0 ]; then
         echo "Transfer to cluster completed successfully!"
@@ -21,10 +21,10 @@ to_cluster() {
     fi
 }
 
-# Function to push data from the cluster to home (resumable)
+# Function to transfer data to home (resumable)
 to_home() {
-    echo "Pushing data from CLUSTER to HOME (resumable)..."
-    rsync -avP "$CLUSTER_PATH/$DATA_FILE" "$LOCAL_USER@$LOCAL_ADDRESS:$HOME_PATH"
+    echo "Transferring data from CLUSTER to HOME (resumable)..."
+    rsync -avP "$CLUSTER_USER@$CLUSTER_ADDRESS:$CLUSTER_PATH/$DATA_FILE" "$HOME_PATH"
     
     if [ $? -eq 0 ]; then
         echo "Transfer to home completed successfully!"
