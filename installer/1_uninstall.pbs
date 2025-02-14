@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#PBS -N uninstall
+#PBS -o uninstall.out
+#PBS -j oe
+
+#PBS -q workq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=2
+#PBS -l mem=16gb
+#PBS -l walltime=4:00:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the projects directory
+cd ~/projects/Stainalyzer/installer/
+
+# Load Conda
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate ml
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+
+# Remove CPU packages to install in GPU
+conda remove pytorch torchvision torchaudio -y
+conda remove tensorflow tensorflow-gpu keras keras-tuner -y
+conda remove xgboost lightgbm faiss-cpu cudatoolkit -y
+conda remove horovod detectron2 efficientnet-pytorch -y
+conda remove face_recognition opencv opencv-python-headless scikit-image -y
+conda remove transformers accelerate cuml -y
+
+# Remove packages that may have been installed through pip
+pip uninstall --no-input transformers accelerate detectron2 efficientnet-pytorch face_recognition opencv-python-headless scikit-image cupy-cuda101
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+

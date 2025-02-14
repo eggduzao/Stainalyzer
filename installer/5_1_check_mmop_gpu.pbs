@@ -1,0 +1,30 @@
+#!/bin/bash
+
+#PBS -N check_mmop_gpu
+#PBS -o check_mmop_gpu.out
+#PBS -j oe
+
+#PBS -q gpuq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=4:gpus=1
+#PBS -l mem=48gb
+#PBS -l walltime=00:30:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the projects directory
+cd ~/projects/Stainalyzer/installer/
+
+# Load Conda
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate ml
+
+# Uncompress Control
+python 5_check_mmop.py
+

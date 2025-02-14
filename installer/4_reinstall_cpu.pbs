@@ -1,0 +1,64 @@
+#!/bin/bash
+
+#PBS -N reinstall_cpu
+#PBS -o reinstall_cpu.out
+#PBS -j oe
+
+#PBS -q workq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=4
+#PBS -l mem=32gb
+#PBS -l walltime=24:00:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the projects directory
+cd ~/projects/Stainalyzer/installer/
+
+# Load Conda
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate ml
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+
+# Install CPU-Only Packages
+conda install pytorch torchvision torchaudio cpuonly -c pytorch -y
+pip install --no-input tensorflow
+pip install --no-input keras
+pip install --no-input faiss-cpu
+pip install --no-input xgboost lightgbm
+pip install --no-input transformers accelerate
+pip install --no-input detectron2 --no-cache-dir
+pip install --no-input efficientnet-pytorch face_recognition opencv-python-headless scikit-image
+
+# Install Packages that are missing in conda
+pip install --no-input pysam pyBigWig pybedtools pymzml pyteomics bcftools samtools HTSeq annoy apex bioblend
+pip install --no-input biopython-extras deeplearning4j feature-engine gffutils great_expectations huggingface-hub
+pip install --no-input methylpy ml-dtypes multiqc opencv-python pybzip2 pyensembl pyheif pymetagenomics rna-tools
+pip install --no-input snakemake soundfile stylegan3 vcfpy
+
+# Install libs that are missing in conda
+pip install --no-input opencv-python-headless
+pip install --no-input pybzip2
+
+# Snakemake
+pip install --no-input --upgrade snakemake
+
+# Install Complex packages that are missing in conda and do not fit my architecture
+pip install --no-input mxnet-mkl
+pip install --no-input pymc>=5.0
+pip install --no-input gymnasium
+pip install --no-input vaex
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+

@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#PBS -N install_gpu
+#PBS -o install_gpu.out
+#PBS -j oe
+
+#PBS -q gpuq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=node2:ppn=4:gpus=1
+#PBS -l mem=48gb
+#PBS -l walltime=24:00:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the projects directory
+cd ~/projects/Stainalyzer/installer/
+
+# Load Conda
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate ml
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+
+# Install GPU-optimized packages
+conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch -y
+conda install tensorflow-gpu cudatoolkit=10.1 -c conda-forge -y
+conda install keras keras-tuner -c conda-forge -y
+conda install faiss-gpu -c conda-forge -y
+conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=23.08 python=3.12 cudatoolkit=10.1 -y
+conda install xgboost dask-cuda -c conda-forge -y
+conda install lightgbm dask-cuda -c conda-forge -y
+pip install --no-input transformers accelerate
+pip install --no-input detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch2.0/index.html
+pip install --no-input efficientnet-pytorch face_recognition opencv-python-headless scikit-image
+pip install --no-input cupy-cuda101
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+
