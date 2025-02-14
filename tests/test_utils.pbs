@@ -18,6 +18,8 @@
 
 # cd $PBS_O_WORKDIR
 
+conda activate ml
+
 # Navigate to the directory where the .def file is stored
 cd ~/projects/Stainalyzer/tests/
 
