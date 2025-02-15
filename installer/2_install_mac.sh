@@ -10,7 +10,5 @@ pip install --no-input dask joblib jupyterlab notebook optuna hyperopt
 pip install --no-input faiss-cpu xgboost lightgbm transformers accelerate
 pip install --no-input tensorflow keras
 pip install --no-input torch torchvision torchaudio --no-cache-dir
-pip install --no-input detectron2 --no-cache-dir
 pip install --no-input efficientnet-pytorch face_recognition mayavi vedo pyvista trimesh open3d
-pip install --no-input cupy
 

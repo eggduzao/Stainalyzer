@@ -15,7 +15,7 @@
 #PBS -l nodes=1:ppn=4
 #PBS -l ngpus=1
 #PBS -l mem=48gb
-#PBS -l walltime=24:00:00
+#PBS -l walltime=8:00:00
 
 # cd $PBS_O_WORKDIR
 
@@ -29,19 +29,30 @@ conda activate ml
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
 pip cache purge
+pip install --upgrade pip
 
 # Install GPU-optimized packages
-conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch -y
-conda install tensorflow-gpu cudatoolkit=10.1 -c conda-forge -y
-conda install keras keras-tuner -c conda-forge -y
-conda install faiss-gpu -c conda-forge -y
-conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=23.08 python=3.12 cudatoolkit=10.1 -y
-conda install xgboost dask-cuda -c conda-forge -y
-conda install lightgbm dask-cuda -c conda-forge -y
-pip install --no-input transformers accelerate
-pip install --no-input detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch2.0/index.html
-pip install --no-input efficientnet-pytorch face_recognition opencv-python-headless scikit-image
-pip install --no-input cupy-cuda101
+# conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch -y
+# conda install tensorflow-gpu cudatoolkit=10.1 -c conda-forge -y
+# conda install keras keras-tuner -c conda-forge -y
+# conda install faiss-gpu -c conda-forge -y
+# conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=23.08 python=3.12 cudatoolkit=10.1 -y
+conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=21.06 python=3.12 cudatoolkit=10.1 -y
+# conda install xgboost dask-cuda -c conda-forge -y
+# conda install lightgbm dask-cuda -c conda-forge -y
+# pip install --no-input transformers accelerate
+# pip install --no-input detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch2.0/index.html
+pip install --no-input detectron2==0.4 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.7/index.html
+# pip install --no-input efficientnet-pytorch face_recognition opencv-python-headless scikit-image
+# pip install --no-input cupy-cuda101
+pip install cupy-cuda101 --extra-index-url https://pypi.nvidia.com
+# pip install cupy-cuda101==13.0.0 --extra-index-url https://pypi.nvidia.com
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+
+python 3_check_torch.py
 
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
