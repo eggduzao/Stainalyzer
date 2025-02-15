@@ -1,0 +1,2303 @@
+There are no unused tarball(s) to remove.
+Will remove 1 index cache(s).
+Will remove 2 (16.6 MB) package(s).
+There are no tempfile(s) to remove.
+There are no logfile(s) to remove.
+WARNING: No matching packages
+Files removed: 0 (0 bytes)
+Channels:
+ - pytorch
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... Out of memory allocating 18446744071562067969*4 bytes!
+/home/egusmao/miniconda/etc/profile.d/conda.sh: line 15: 328484 Aborted                 (core dumped) "$CONDA_EXE" "$@"
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - nothing provides tensorflow 2.15.0 cuda118py310h943c599_0 needed by tensorflow-gpu-2.15.0-cuda118py310h0240f8b_0
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ pin on python 3.12.* is installable and it requires
+│  └─ python =3.12, which can be installed;
+├─ pytorch-cuda =11.8 is installable and it requires
+│  └─ cuda-cudart >=11.8,<12.0, which can be installed;
+└─ tensorflow-gpu is not installable because there are no viable options
+   ├─ tensorflow-gpu [2.10.0|2.11.0|...|2.8.1] would require
+   │  └─ tensorflow [==2.10.0 cuda112py310he87a039_0|==2.11.0 cuda112py310he87a039_0|...|==2.8.1 cuda112py310he87a039_0], which requires
+   │     └─ python >=3.10,<3.11.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu [2.10.0|2.11.0|...|2.8.1] would require
+   │  └─ tensorflow [==2.10.0 cuda112py38hded6998_0|==2.11.0 cuda112py38hded6998_0|...|==2.8.1 cuda112py38hded6998_0], which requires
+   │     └─ python >=3.8,<3.9.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu [2.10.0|2.11.0|...|2.8.1] would require
+   │  └─ tensorflow [==2.10.0 cuda112py39h01bd6f0_0|==2.11.0 cuda112py39h01bd6f0_0|...|==2.8.1 cuda112py39h01bd6f0_0], which requires
+   │     └─ python >=3.9,<3.10.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu [2.12.1|2.13.1|...|2.18.0] would require
+   │  └─ tensorflow [==2.12.1 cuda112py311h63ba870_0|==2.12.1 cuda112py311h63ba870_1|...|==2.18.0 cuda126py311h673d4f6_200], which requires
+   │     └─ python >=3.11,<3.12.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py310h943c599_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py310h943c599_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py311hfabe020_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py311hfabe020_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py39h5387621_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda118py39h5387621_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py310h9360858_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py310h9360858_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py311h5cbd639_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py311h5cbd639_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py39hb94c71b_0, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu 2.15.0 would require
+   │  └─ tensorflow ==2.15.0 cuda120py39hb94c71b_1, which does not exist (perhaps a missing channel);
+   ├─ tensorflow-gpu [2.16.1|2.16.2|2.17.0] would require
+   │  └─ tensorflow [==2.16.1 cuda120py312hee4d333_0|==2.16.2 cuda120py312h02ad488_0|==2.17.0 cuda120py312h02ad488_201|==2.17.0 cuda120py312h02ad488_202|==2.17.0 cuda120py312h02ad488_203], which requires
+   │     └─ tensorflow-base [==2.16.1 cuda120py312h3a81633_0|==2.16.2 cuda120py312h7059624_0|==2.17.0 cuda120py312h476c953_201|==2.17.0 cuda120py312h8a249fc_202|==2.17.0 cuda120py312hbec54f7_203], which requires
+   │        └─ cuda-cudart >=12.0.107,<13.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu 2.18.0 would require
+   │  └─ tensorflow ==2.18.0 cuda126py312h5379a72_200, which requires
+   │     └─ tensorflow-base ==2.18.0 cuda126py312hfb0ba9c_200, which requires
+   │        └─ cuda-cudart >=12.6.77,<13.0a0, which conflicts with any installable versions previously reported;
+   ├─ tensorflow-gpu [2.10.0|2.6.0|...|2.8.1] would require
+   │  └─ tensorflow [==2.10.0 cuda112py37h01c6645_0|==2.6.0 cuda102py37h4cd87c6_2|...|==2.8.1 cuda112py37h01c6645_0], which requires
+   │     └─ python >=3.7,<3.8.0a0, which conflicts with any installable versions previously reported;
+   └─ tensorflow-gpu [1.10.0|1.11.0|...|2.4.1] conflicts with any installable versions previously reported.
+
+Pins seem to be involved in the conflict. Currently pinned specs:
+ - python=3.12
+
+
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /home/egusmao/miniconda/envs/ml
+
+  added / updated specs:
+    - keras
+    - keras-tuner
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    arrow-cpp-13.0.0           |  ha770c72_42_cpu          42 KB  conda-forge
+    aws-c-auth-0.7.22          |       h96bc93b_2         103 KB  conda-forge
+    aws-c-cal-0.6.14           |       h88a6e22_1          46 KB  conda-forge
+    aws-c-common-0.9.19        |       h4ab18f5_0         221 KB  conda-forge
+    aws-c-compression-0.2.18   |       h83b837d_6          19 KB  conda-forge
+    aws-c-event-stream-0.4.2   |      ha47c788_12          53 KB  conda-forge
+    aws-c-http-0.8.1           |      h29d6fba_17         190 KB  conda-forge
+    aws-c-io-0.14.8            |       h21d4f22_5         154 KB  conda-forge
+    aws-c-mqtt-0.10.4          |       h759edc4_4         160 KB  conda-forge
+    aws-c-s3-0.5.9             |       h594631b_3         107 KB  conda-forge
+    aws-c-sdkutils-0.1.16      |       h83b837d_2          54 KB  conda-forge
+    aws-checksums-0.1.18       |       h83b837d_6          49 KB  conda-forge
+    aws-crt-cpp-0.26.9         |       he3a8b3b_0         332 KB  conda-forge
+    aws-sdk-cpp-1.11.329       |       hba8bd5f_3         3.5 MB  conda-forge
+    cached-property-1.5.2      |       hd8ed1ab_1           4 KB  conda-forge
+    dask-2024.8.1              |     pyhd8ed1ab_0           7 KB  conda-forge
+    dask-core-2024.8.1         |     pyhd8ed1ab_0         864 KB  conda-forge
+    dask-expr-1.1.11           |     pyhd8ed1ab_0         181 KB  conda-forge
+    distributed-2024.8.1       |     pyhd8ed1ab_0         782 KB  conda-forge
+    dm-tree-0.1.8              |  py312h83439f5_5         118 KB  conda-forge
+    grpcio-1.62.2              |  py312hb06c811_0        1022 KB  conda-forge
+    h5py-3.12.1                |nompi_py312hedeef09_103         1.3 MB  conda-forge
+    hdf5-1.14.3                |nompi_hdf9ad27_105         3.7 MB  conda-forge
+    importlib_metadata-8.5.0   |       hd8ed1ab_1           9 KB  conda-forge
+    libarrow-13.0.0            |  h34ad07a_42_cpu        26.5 MB  conda-forge
+    libgfortran-14.2.0         |       h69a702a_1          53 KB  conda-forge
+    libgfortran-ng-14.2.0      |       h69a702a_1          53 KB  conda-forge
+    libgoogle-cloud-2.24.0     |       h2736e30_0         1.2 MB  conda-forge
+    libgoogle-cloud-storage-2.24.0|       h3d9a0c8_0         735 KB  conda-forge
+    libgrpc-1.62.2             |       h15f2491_0         7.0 MB  conda-forge
+    libre2-11-2023.09.01       |       h5a48ba9_2         227 KB  conda-forge
+    libsystemd0-256.9          |       h2774228_0         401 KB  conda-forge
+    libthrift-0.19.0           |       hb90f79a_1         400 KB  conda-forge
+    libudev1-257.3             |       h9a4d06a_0         140 KB  conda-forge
+    markdown-it-py-3.0.0       |     pyhd8ed1ab_1          63 KB  conda-forge
+    mdurl-0.1.2                |     pyhd8ed1ab_1          14 KB  conda-forge
+    ml_dtypes-0.3.2            |  py312hfb8ada1_0         168 KB  conda-forge
+    protobuf-4.25.3            |  py312h83439f5_1         381 KB  conda-forge
+    pyarrow-13.0.0             |py312h3f82784_42_cpu         3.9 MB  conda-forge
+    pyarrow-hotfix-0.6         |     pyhd8ed1ab_1          13 KB  conda-forge
+    pygments-2.19.1            |     pyhd8ed1ab_0         868 KB  conda-forge
+    re2-2023.09.01             |       h7f4b329_2          26 KB  conda-forge
+    rich-13.9.4                |     pyhd8ed1ab_1         181 KB  conda-forge
+    s2n-1.4.15                 |       he19d79f_0         341 KB  conda-forge
+    tensorboard-2.16.2         |     pyhd8ed1ab_0         4.9 MB  conda-forge
+    tensorflow-2.16.1          |cpu_py312hfe0d8c0_0          41 KB  conda-forge
+    tensorflow-base-2.16.1     |cpu_py312hc526dda_0       149.9 MB  conda-forge
+    tensorflow-estimator-2.16.1|cpu_py312hbf2973a_0         681 KB  conda-forge
+    typing-extensions-4.12.2   |       hd8ed1ab_1          10 KB  conda-forge
+    ucx-1.16.0                 |       h1e563ba_5         6.7 MB  conda-forge
+    ------------------------------------------------------------
+                                           Total:       217.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  absl-py            conda-forge/noarch::absl-py-2.1.0-pyhd8ed1ab_1 
+  asttokens          conda-forge/noarch::asttokens-3.0.0-pyhd8ed1ab_1 
+  astunparse         conda-forge/noarch::astunparse-1.6.3-pyhd8ed1ab_3 
+  attr               conda-forge/linux-64::attr-2.5.1-h166bdaf_1 
+  cached-property    conda-forge/noarch::cached-property-1.5.2-hd8ed1ab_1 
+  cached_property    conda-forge/noarch::cached_property-1.5.2-pyha770c72_1 
+  decorator          conda-forge/noarch::decorator-5.1.1-pyhd8ed1ab_1 
+  dm-tree            conda-forge/linux-64::dm-tree-0.1.8-py312h83439f5_5 
+  exceptiongroup     conda-forge/noarch::exceptiongroup-1.2.2-pyhd8ed1ab_1 
+  executing          conda-forge/noarch::executing-2.1.0-pyhd8ed1ab_1 
+  flatbuffers        conda-forge/linux-64::flatbuffers-24.3.25-h59595ed_0 
+  gast               conda-forge/noarch::gast-0.6.0-pyhd8ed1ab_0 
+  google-pasta       conda-forge/noarch::google-pasta-0.2.0-pyhd8ed1ab_2 
+  grpcio             conda-forge/linux-64::grpcio-1.62.2-py312hb06c811_0 
+  h5py               conda-forge/linux-64::h5py-3.12.1-nompi_py312hedeef09_103 
+  hdf5               conda-forge/linux-64::hdf5-1.14.3-nompi_hdf9ad27_105 
+  importlib_metadata conda-forge/noarch::importlib_metadata-8.5.0-hd8ed1ab_1 
+  ipython            conda-forge/noarch::ipython-8.32.0-pyh907856f_0 
+  jedi               conda-forge/noarch::jedi-0.19.2-pyhd8ed1ab_1 
+  keras              conda-forge/noarch::keras-3.8.0-pyh753f3f9_0 
+  keras-core         conda-forge/noarch::keras-core-0.1.7-pyhd8ed1ab_0 
+  keras-tuner        conda-forge/noarch::keras-tuner-1.4.7-pyhd8ed1ab_1 
+  kt-legacy          conda-forge/noarch::kt-legacy-1.0.5-pyhd8ed1ab_1 
+  libaec             conda-forge/linux-64::libaec-1.1.3-h59595ed_0 
+  libarrow           conda-forge/linux-64::libarrow-13.0.0-h34ad07a_42_cpu 
+  libcap             conda-forge/linux-64::libcap-2.71-h39aace5_0 
+  libcrc32c          conda-forge/linux-64::libcrc32c-1.1.2-h9c3ff4c_0 
+  libgcrypt-lib      conda-forge/linux-64::libgcrypt-lib-1.11.0-hb9d3cd8_2 
+  libgfortran        conda-forge/linux-64::libgfortran-14.2.0-h69a702a_1 
+  libgoogle-cloud    conda-forge/linux-64::libgoogle-cloud-2.24.0-h2736e30_0 
+  libgoogle-cloud-s~ conda-forge/linux-64::libgoogle-cloud-storage-2.24.0-h3d9a0c8_0 
+  libgpg-error       conda-forge/linux-64::libgpg-error-1.51-hbd13f7d_1 
+  libnl              conda-forge/linux-64::libnl-3.11.0-hb9d3cd8_0 
+  libre2-11          conda-forge/linux-64::libre2-11-2023.09.01-h5a48ba9_2 
+  libsystemd0        conda-forge/linux-64::libsystemd0-256.9-h2774228_0 
+  libudev1           conda-forge/linux-64::libudev1-257.3-h9a4d06a_0 
+  libutf8proc        conda-forge/linux-64::libutf8proc-2.8.0-hf23e847_1 
+  markdown           conda-forge/noarch::markdown-3.6-pyhd8ed1ab_0 
+  markdown-it-py     conda-forge/noarch::markdown-it-py-3.0.0-pyhd8ed1ab_1 
+  matplotlib-inline  conda-forge/noarch::matplotlib-inline-0.1.7-pyhd8ed1ab_1 
+  mdurl              conda-forge/noarch::mdurl-0.1.2-pyhd8ed1ab_1 
+  ml_dtypes          conda-forge/linux-64::ml_dtypes-0.3.2-py312hfb8ada1_0 
+  namex              conda-forge/noarch::namex-0.0.8-pyhd8ed1ab_1 
+  opt_einsum         conda-forge/noarch::opt_einsum-3.4.0-pyhd8ed1ab_1 
+  optree             conda-forge/linux-64::optree-0.14.0-py312h68727a3_1 
+  parso              conda-forge/noarch::parso-0.8.4-pyhd8ed1ab_1 
+  pexpect            conda-forge/noarch::pexpect-4.9.0-pyhd8ed1ab_1 
+  pickleshare        conda-forge/noarch::pickleshare-0.7.5-pyhd8ed1ab_1004 
+  prompt-toolkit     conda-forge/noarch::prompt-toolkit-3.0.50-pyha770c72_0 
+  protobuf           conda-forge/linux-64::protobuf-4.25.3-py312h83439f5_1 
+  ptyprocess         conda-forge/noarch::ptyprocess-0.7.0-pyhd8ed1ab_1 
+  pure_eval          conda-forge/noarch::pure_eval-0.2.3-pyhd8ed1ab_1 
+  pyarrow-hotfix     conda-forge/noarch::pyarrow-hotfix-0.6-pyhd8ed1ab_1 
+  pygments           conda-forge/noarch::pygments-2.19.1-pyhd8ed1ab_0 
+  python-flatbuffers conda-forge/noarch::python-flatbuffers-25.2.10-pyhbc23db3_0 
+  rdma-core          conda-forge/linux-64::rdma-core-55.0-h5888daf_0 
+  rich               conda-forge/noarch::rich-13.9.4-pyhd8ed1ab_1 
+  stack_data         conda-forge/noarch::stack_data-0.6.3-pyhd8ed1ab_1 
+  tensorboard        conda-forge/noarch::tensorboard-2.16.2-pyhd8ed1ab_0 
+  tensorboard-data-~ conda-forge/linux-64::tensorboard-data-server-0.7.0-py312hda17c39_2 
+  tensorflow         conda-forge/linux-64::tensorflow-2.16.1-cpu_py312hfe0d8c0_0 
+  tensorflow-base    conda-forge/linux-64::tensorflow-base-2.16.1-cpu_py312hc526dda_0 
+  tensorflow-estima~ conda-forge/linux-64::tensorflow-estimator-2.16.1-cpu_py312hbf2973a_0 
+  termcolor          conda-forge/noarch::termcolor-2.5.0-pyhd8ed1ab_1 
+  traitlets          conda-forge/noarch::traitlets-5.14.3-pyhd8ed1ab_1 
+  typing-extensions  conda-forge/noarch::typing-extensions-4.12.2-hd8ed1ab_1 
+  ucx                conda-forge/linux-64::ucx-1.16.0-h1e563ba_5 
+  wcwidth            conda-forge/noarch::wcwidth-0.2.13-pyhd8ed1ab_1 
+  wrapt              conda-forge/linux-64::wrapt-1.17.2-py312h66e93f0_0 
+
+The following packages will be UPDATED:
+
+  aws-c-auth         pkgs/main::aws-c-auth-0.6.19-h5eee18b~ --> conda-forge::aws-c-auth-0.7.22-h96bc93b_2 
+  aws-c-cal          pkgs/main::aws-c-cal-0.5.20-hdbd6064_0 --> conda-forge::aws-c-cal-0.6.14-h88a6e22_1 
+  aws-c-common       pkgs/main::aws-c-common-0.8.5-h5eee18~ --> conda-forge::aws-c-common-0.9.19-h4ab18f5_0 
+  aws-c-compression  pkgs/main::aws-c-compression-0.2.16-h~ --> conda-forge::aws-c-compression-0.2.18-h83b837d_6 
+  aws-c-event-stream pkgs/main::aws-c-event-stream-0.2.15-~ --> conda-forge::aws-c-event-stream-0.4.2-ha47c788_12 
+  aws-c-http         pkgs/main::aws-c-http-0.6.25-h5eee18b~ --> conda-forge::aws-c-http-0.8.1-h29d6fba_17 
+  aws-c-io           pkgs/main::aws-c-io-0.13.10-h5eee18b_0 --> conda-forge::aws-c-io-0.14.8-h21d4f22_5 
+  aws-c-mqtt         pkgs/main::aws-c-mqtt-0.7.13-h5eee18b~ --> conda-forge::aws-c-mqtt-0.10.4-h759edc4_4 
+  aws-c-s3            pkgs/main::aws-c-s3-0.1.51-hdbd6064_0 --> conda-forge::aws-c-s3-0.5.9-h594631b_3 
+  aws-c-sdkutils     pkgs/main::aws-c-sdkutils-0.1.6-h5eee~ --> conda-forge::aws-c-sdkutils-0.1.16-h83b837d_2 
+  aws-checksums      pkgs/main::aws-checksums-0.1.13-h5eee~ --> conda-forge::aws-checksums-0.1.18-h83b837d_6 
+  aws-crt-cpp        pkgs/main::aws-crt-cpp-0.18.16-h6a678~ --> conda-forge::aws-crt-cpp-0.26.9-he3a8b3b_0 
+  aws-sdk-cpp        pkgs/main::aws-sdk-cpp-1.11.212-hecad~ --> conda-forge::aws-sdk-cpp-1.11.329-hba8bd5f_3 
+  c-ares                pkgs/main::c-ares-1.19.1-h5eee18b_0 --> conda-forge::c-ares-1.34.4-hb9d3cd8_0 
+  glog                     pkgs/main::glog-0.5.0-h6a678d5_1 --> conda-forge::glog-0.7.1-hbabe93e_0 
+  libbrotlicommon    pkgs/main::libbrotlicommon-1.0.9-h5ee~ --> conda-forge::libbrotlicommon-1.1.0-hb9d3cd8_2 
+  libbrotlidec       pkgs/main::libbrotlidec-1.0.9-h5eee18~ --> conda-forge::libbrotlidec-1.1.0-hb9d3cd8_2 
+  libbrotlienc       pkgs/main::libbrotlienc-1.0.9-h5eee18~ --> conda-forge::libbrotlienc-1.1.0-hb9d3cd8_2 
+  libgfortran-ng     pkgs/main::libgfortran-ng-11.2.0-h003~ --> conda-forge::libgfortran-ng-14.2.0-h69a702a_1 
+  libgfortran5       pkgs/main::libgfortran5-11.2.0-h12345~ --> conda-forge::libgfortran5-14.2.0-hd5240d6_1 
+  libthrift          pkgs/main::libthrift-0.15.0-h1795dd8_2 --> conda-forge::libthrift-0.19.0-hb90f79a_1 
+  re2                  pkgs/main::re2-2022.04.01-h295c915_0 --> conda-forge::re2-2023.09.01-h7f4b329_2 
+  s2n                      pkgs/main::s2n-1.3.27-hdbd6064_0 --> conda-forge::s2n-1.4.15-he19d79f_0 
+
+The following packages will be SUPERSEDED by a higher-priority channel:
+
+  arrow-cpp          pkgs/main::arrow-cpp-19.0.0-h865e1df_0 --> conda-forge::arrow-cpp-13.0.0-ha770c72_42_cpu 
+  dask               pkgs/main/linux-64::dask-2024.12.1-py~ --> conda-forge/noarch::dask-2024.8.1-pyhd8ed1ab_0 
+  dask-core          pkgs/main/linux-64::dask-core-2024.12~ --> conda-forge/noarch::dask-core-2024.8.1-pyhd8ed1ab_0 
+  dask-expr          pkgs/main/linux-64::dask-expr-1.1.21-~ --> conda-forge/noarch::dask-expr-1.1.11-pyhd8ed1ab_0 
+  distributed        pkgs/main/linux-64::distributed-2024.~ --> conda-forge/noarch::distributed-2024.8.1-pyhd8ed1ab_0 
+  libgrpc              pkgs/main::libgrpc-1.62.2-h2d74bed_0 --> conda-forge::libgrpc-1.62.2-h15f2491_0 
+  pyarrow            pkgs/main::pyarrow-19.0.0-py312h6a678~ --> conda-forge::pyarrow-13.0.0-py312h3f82784_42_cpu 
+
+
+
+Downloading and Extracting Packages: ...working...tensorflow-base-2.16 | 149.9 MB  |            |   0% 
+libarrow-13.0.0      | 26.5 MB   |            |   0% [A
+
+libgrpc-1.62.2       | 7.0 MB    |            |   0% [A[A
+
+
+ucx-1.16.0           | 6.7 MB    |            |   0% [A[A[A
+
+
+
+tensorboard-2.16.2   | 4.9 MB    |            |   0% [A[A[A[A
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+hdf5-1.14.3          | 3.7 MB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+aws-sdk-cpp-1.11.329 | 3.5 MB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+h5py-3.12.1          | 1.3 MB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgoogle-cloud-2.24 | 1.2 MB    |            |   0% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+grpcio-1.62.2        | 1022 KB   |            |   0% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+pygments-2.19.1      | 868 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+dask-core-2024.8.1   | 864 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+distributed-2024.8.1 | 782 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgoogle-cloud-stor | 735 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tensorflow-estimator | 681 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libsystemd0-256.9    | 401 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libthrift-0.19.0     | 400 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protobuf-4.25.3      | 381 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  |            |   0% 
+
+
+
+tensorboard-2.16.2   | 4.9 MB    |            |   0% [A[A[A[A
+
+libgrpc-1.62.2       | 7.0 MB    |            |   0% [A[Atensorflow-base-2.16 | 149.9 MB  |            |   0% 
+
+
+
+tensorboard-2.16.2   | 4.9 MB    | 6          |   6% [A[A[A[A
+
+libgrpc-1.62.2       | 7.0 MB    | 3          |   3% [A[A
+
+
+ucx-1.16.0           | 6.7 MB    |            |   0% [A[A[A
+libarrow-13.0.0      | 26.5 MB   |            |   0% [Atensorflow-base-2.16 | 149.9 MB  | 1          |   2% 
+
+
+
+tensorboard-2.16.2   | 4.9 MB    | ####       |  41% [A[A[A[A
+
+libgrpc-1.62.2       | 7.0 MB    | ###1       |  32% [A[A
+
+
+ucx-1.16.0           | 6.7 MB    | 3          |   3% [A[A[Atensorflow-base-2.16 | 149.9 MB  | 2          |   3% 
+libarrow-13.0.0      | 26.5 MB   | 1          |   1% [A
+
+libgrpc-1.62.2       | 7.0 MB    | ######9    |  70% [A[A
+
+
+
+tensorboard-2.16.2   | 4.9 MB    | ########   |  80% [A[A[A[A
+
+
+
+tensorboard-2.16.2   | 4.9 MB    | ########## | 100% [A[A[A[A
+
+
+ucx-1.16.0           | 6.7 MB    | ##5        |  26% [A[A[A
+
+libgrpc-1.62.2       | 7.0 MB    | ########## | 100% [A[Atensorflow-base-2.16 | 149.9 MB  | 5          |   5% 
+libarrow-13.0.0      | 26.5 MB   | 7          |   8% [A
+
+
+
+
+
+hdf5-1.14.3          | 3.7 MB    |            |   0% [A[A[A[A[A[A
+
+
+ucx-1.16.0           | 6.7 MB    | #########  |  91% [A[A[A
+libarrow-13.0.0      | 26.5 MB   | #5         |  16% [A
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    |            |   0% [A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | 7          |   7% 
+
+
+
+
+
+hdf5-1.14.3          | 3.7 MB    | #########8 |  98% [A[A[A[A[A[A
+
+
+ucx-1.16.0           | 6.7 MB    | ########## | 100% [A[A[A
+
+
+
+
+
+hdf5-1.14.3          | 3.7 MB    | ########## | 100% [A[A[A[A[A[A
+libarrow-13.0.0      | 26.5 MB   | ###4       |  34% [A
+
+
+
+
+
+
+aws-sdk-cpp-1.11.329 | 3.5 MB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+h5py-3.12.1          | 1.3 MB    | 1          |   1% [A[A[A[A[A[A[A[A
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    | #####7     |  58% [A[A[A[A[A
+libarrow-13.0.0      | 26.5 MB   | ####9      |  49% [A
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+
+h5py-3.12.1          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+h5py-3.12.1          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+aws-sdk-cpp-1.11.329 | 3.5 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+
+
+aws-sdk-cpp-1.11.329 | 3.5 MB    | ########## | 100% [A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | 8          |   9% 
+
+
+
+
+
+
+
+
+libgoogle-cloud-2.24 | 1.2 MB    | 1          |   1% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+grpcio-1.62.2        | 1022 KB   | 1          |   2% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+pygments-2.19.1      | 868 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A
+libarrow-13.0.0      | 26.5 MB   | ######8    |  69% [A
+
+
+
+
+
+
+
+
+libgoogle-cloud-2.24 | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+dask-core-2024.8.1   | 864 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | #1         |  11% 
+
+
+
+
+
+
+
+
+
+
+
+dask-core-2024.8.1   | 864 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+pygments-2.19.1      | 868 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+pygments-2.19.1      | 868 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+libarrow-13.0.0      | 26.5 MB   | ########3  |  83% [A
+
+
+
+
+
+
+
+
+
+grpcio-1.62.2        | 1022 KB   | #########7 |  97% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+grpcio-1.62.2        | 1022 KB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+distributed-2024.8.1 | 782 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgoogle-cloud-stor | 735 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | #3         |  13% 
+
+
+
+
+
+
+
+
+
+
+
+
+distributed-2024.8.1 | 782 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgoogle-cloud-stor | 735 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libsystemd0-256.9    | 401 KB    | 3          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libthrift-0.19.0     | 400 KB    | 4          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libsystemd0-256.9    | 401 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libthrift-0.19.0     | 400 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | #6         |  16% 
+libarrow-13.0.0      | 26.5 MB   | ########## | 100% [A
+libarrow-13.0.0      | 26.5 MB   | ########## | 100% [A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protobuf-4.25.3      | 381 KB    | 4          |   4% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tensorflow-estimator | 681 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protobuf-4.25.3      | 381 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | #9         |  20% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tensorflow-estimator | 681 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+ucx-1.16.0           | 6.7 MB    | ########## | 100% [A[A[Atensorflow-base-2.16 | 149.9 MB  | ##4        |  24% tensorflow-base-2.16 | 149.9 MB  | ##9        |  30% 
+
+
+
+tensorboard-2.16.2   | 4.9 MB    | ########## | 100% [A[A[A[Atensorflow-base-2.16 | 149.9 MB  | ###4       |  35% tensorflow-base-2.16 | 149.9 MB  | ###9       |  40% tensorflow-base-2.16 | 149.9 MB  | ####5      |  45% tensorflow-base-2.16 | 149.9 MB  | #####      |  50% tensorflow-base-2.16 | 149.9 MB  | #####5     |  55% tensorflow-base-2.16 | 149.9 MB  | ######     |  61% tensorflow-base-2.16 | 149.9 MB  | ######5    |  66% tensorflow-base-2.16 | 149.9 MB  | #######    |  71% tensorflow-base-2.16 | 149.9 MB  | #######6   |  76% tensorflow-base-2.16 | 149.9 MB  | ########1  |  81% 
+
+
+
+
+
+hdf5-1.14.3          | 3.7 MB    | ########## | 100% [A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | ########6  |  86% tensorflow-base-2.16 | 149.9 MB  | #########1 |  91% tensorflow-base-2.16 | 149.9 MB  | #########6 |  97% 
+
+
+
+
+
+
+
+h5py-3.12.1          | 1.3 MB    | ########## | 100% [A[A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | ########## | 100% 
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+pyarrow-13.0.0       | 3.9 MB    | ########## | 100% [A[A[A[A[A
+
+libgrpc-1.62.2       | 7.0 MB    | ########## | 100% [A[A
+
+libgrpc-1.62.2       | 7.0 MB    | ########## | 100% [A[A
+
+
+
+
+
+
+
+
+libgoogle-cloud-2.24 | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgoogle-cloud-2.24 | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+dask-core-2024.8.1   | 864 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+dask-core-2024.8.1   | 864 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+pygments-2.19.1      | 868 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+distributed-2024.8.1 | 782 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+distributed-2024.8.1 | 782 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgoogle-cloud-stor | 735 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgoogle-cloud-stor | 735 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libsystemd0-256.9    | 401 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libsystemd0-256.9    | 401 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libthrift-0.19.0     | 400 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libthrift-0.19.0     | 400 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+grpcio-1.62.2        | 1022 KB   | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protobuf-4.25.3      | 381 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+protobuf-4.25.3      | 381 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tensorflow-estimator | 681 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tensorflow-estimator | 681 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+libarrow-13.0.0      | 26.5 MB   | ########## | 100% [A
+
+
+
+
+
+
+aws-sdk-cpp-1.11.329 | 3.5 MB    | ########## | 100% [A[A[A[A[A[A[Atensorflow-base-2.16 | 149.9 MB  | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A done
+Preparing transaction: - \ | / - \ | / - \ | / - \ | done
+Verifying transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | 
+To enable CUDA support, UCX requires the CUDA Runtime library (libcudart).
+The library can be installed with the appropriate command below:
+
+* For CUDA 11, run:    conda install cudatoolkit cuda-version=11
+* For CUDA 12, run:    conda install cuda-cudart cuda-version=12
+
+
+/ - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / done
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package pytorch-cuda-11.8-h7e8668a_6 requires cuda-libraries >=11.8,<12.0, but none of the providers can be installed
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ faiss-gpu is installable with the potential options
+│  ├─ faiss-gpu 1.6.3 would require
+│  │  └─ faiss ==1.6.3 *_cuda with the potential options
+│  │     ├─ faiss 1.6.3 would require
+│  │     │  └─ python_abi =3.6 *_cp36m, which requires
+│  │     │     └─ python =3.6, which can be installed;
+│  │     ├─ faiss 1.6.3 would require
+│  │     │  └─ cudatoolkit ==10.2|=10.2, which can be installed;
+│  │     ├─ faiss 1.6.3 would require
+│  │     │  └─ cudatoolkit ==9.2|=9.2, which can be installed;
+│  │     ├─ faiss 1.6.3 would require
+│  │     │  └─ cudatoolkit ==11.0|=11.0, which can be installed;
+│  │     ├─ faiss 1.6.3 would require
+│  │     │  └─ cudatoolkit ==10.1|=10.1, which can be installed;
+│  │     └─ faiss 1.6.3 would require
+│  │        └─ cudatoolkit ==10.0|=10.0, which can be installed;
+│  ├─ faiss-gpu 1.7.2 would require
+│  │  └─ faiss ==1.7.2 *_cuda with the potential options
+│  │     ├─ faiss [1.7.1|1.7.2|...|1.9.0] would require
+│  │     │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│  │     ├─ faiss [1.7.2|1.7.3|1.7.4|1.8.0|1.9.0] would require
+│  │     │  └─ python >=3.11,<3.12.0a0, which can be installed;
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.8.0] would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.9.0] would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     └─ faiss [1.6.4|1.6.5|1.7.0|1.7.1|1.7.2] would require
+│  │        └─ python >=3.7,<3.8.0a0, which can be installed;
+│  ├─ faiss-gpu [1.7.3|1.7.4] would require
+│  │  └─ faiss [==1.7.3 *_cuda|==1.7.4 *_cuda], which can be installed (as previously explained);
+│  ├─ faiss-gpu 1.8.0 would require
+│  │  └─ faiss ==1.8.0 *_cuda with the potential options
+│  │     ├─ faiss [1.7.1|1.7.2|...|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss [1.7.2|1.7.3|1.7.4|1.8.0|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss 1.8.0 would require
+│  │     │  └─ cudatoolkit >=11.8,<12, which can be installed;
+│  │     ├─ faiss 1.8.0 would require
+│  │     │  └─ libfaiss ==1.8.0 *_cuda with the potential options
+│  │     │     ├─ libfaiss [1.8.0|1.9.0] would require
+│  │     │     │  └─ cudatoolkit >=11.8,<12, which can be installed;
+│  │     │     ├─ libfaiss 1.8.0 would require
+│  │     │     │  └─ cuda-cudart >=12.0.107,<13.0a0, which can be installed;
+│  │     │     └─ libfaiss [1.8.0|1.9.0] would require
+│  │     │        └─ cuda-cudart >=12.6.77,<13.0a0, which can be installed;
+│  │     ├─ faiss 1.8.0 would require
+│  │     │  ├─ cuda-version >=12.6,<13 but there are no viable options
+│  │     │  │  ├─ cuda-version 12.8 would require
+│  │     │  │  │  └─ cudatoolkit ==12.8|=12.8, which conflicts with any installable versions previously reported;
+│  │     │  │  └─ cuda-version 12.6 would require
+│  │     │  │     └─ cudatoolkit ==12.6|=12.6, which conflicts with any installable versions previously reported;
+│  │     │  └─ libfaiss ==1.8.0 *_cuda, which can be installed (as previously explained);
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.8.0], which can be installed (as previously explained);
+│  │     └─ faiss [1.6.4|1.6.5|...|1.9.0], which can be installed (as previously explained);
+│  ├─ faiss-gpu 1.9.0 would require
+│  │  └─ faiss ==1.9.0 *_cuda with the potential options
+│  │     ├─ faiss [1.7.1|1.7.2|...|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss [1.7.2|1.7.3|1.7.4|1.8.0|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss 1.9.0 would require
+│  │     │  ├─ cudatoolkit >=11.8,<12, which can be installed;
+│  │     │  └─ libfaiss ==1.9.0 *_cuda, which can be installed (as previously explained);
+│  │     └─ faiss 1.9.0 would require
+│  │        ├─ cuda-version >=12.6,<13, which cannot be installed (as previously explained);
+│  │        └─ libfaiss ==1.9.0 *_cuda, which can be installed (as previously explained);
+│  ├─ faiss-gpu 1.6.3 would require
+│  │  └─ python_abi =3.6 *_cp36m, which can be installed (as previously explained);
+│  ├─ faiss-gpu [1.6.4|1.6.5|1.7.0] would require
+│  │  └─ faiss [==1.6.4 *_cuda|==1.6.5 *_cuda|==1.7.0 *_cuda] with the potential options
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.8.0], which can be installed (as previously explained);
+│  │     ├─ faiss [1.6.4|1.6.5|...|1.9.0], which can be installed (as previously explained);
+│  │     ├─ faiss [1.6.4|1.6.5|1.7.0|1.7.1|1.7.2], which can be installed (as previously explained);
+│  │     └─ faiss [1.6.4|1.6.5|1.7.0] would require
+│  │        └─ python >=3.6,<3.7.0a0, which can be installed;
+│  └─ faiss-gpu 1.7.1 would require
+│     └─ faiss ==1.7.1 *_cuda, which can be installed (as previously explained);
+├─ pin on python 3.12.* is not installable because it requires
+│  └─ python =3.12, which conflicts with any installable versions previously reported;
+└─ pytorch-cuda =11.8 is not installable because it requires
+   ├─ cuda-cudart >=11.8,<12.0, which conflicts with any installable versions previously reported;
+   └─ cuda-libraries >=11.8,<12.0, which requires
+      ├─ libcufile >=1.4.0.31 but there are no viable options
+      │  ├─ libcufile [1.10.0.4|1.10.1.7] would require
+      │  │  └─ cuda-version >=12.5,<12.6.0a0, which requires
+      │  │     └─ cudatoolkit ==12.5|=12.5, which conflicts with any installable versions previously reported;
+      │  ├─ libcufile [1.11.0.15|1.11.1.6] would require
+      │  │  └─ cuda-version >=12.6,<12.7.0a0, which cannot be installed (as previously explained);
+      │  ├─ libcufile 1.13.0.11 would require
+      │  │  └─ cuda-version >=12.8,<12.9.0a0, which cannot be installed (as previously explained);
+      │  ├─ libcufile 1.5.0.59 would require
+      │  │  └─ cuda-version >=12.0,<12.1.0a0 but there are no viable options
+      │  │     ├─ cuda-version [12.0|12.0.0] would require
+      │  │     │  └─ cudatoolkit ==12.0|=12.0, which conflicts with any installable versions previously reported;
+      │  │     └─ cuda-version 12.0 conflicts with any installable versions previously reported;
+      │  ├─ libcufile 1.6.1.9 would require
+      │  │  └─ cuda-version >=12.1,<12.2.0a0 but there are no viable options
+      │  │     ├─ cuda-version 12.1 would require
+      │  │     │  └─ cudatoolkit ==12.1|=12.1, which conflicts with any installable versions previously reported;
+      │  │     └─ cuda-version 12.1 conflicts with any installable versions previously reported;
+      │  ├─ libcufile 1.7.2.10 would require
+      │  │  └─ cuda-version >=12.2,<12.3.0a0 but there are no viable options
+      │  │     ├─ cuda-version 12.2 would require
+      │  │     │  └─ cudatoolkit ==12.2|=12.2, which conflicts with any installable versions previously reported;
+      │  │     └─ cuda-version 12.2 conflicts with any installable versions previously reported;
+      │  ├─ libcufile 1.8.1.2 would require
+      │  │  └─ cuda-version >=12.3,<12.4.0a0 but there are no viable options
+      │  │     ├─ cuda-version 12.3 would require
+      │  │     │  └─ cudatoolkit ==12.3|=12.3, which conflicts with any installable versions previously reported;
+      │  │     └─ cuda-version 12.3 conflicts with any installable versions previously reported;
+      │  ├─ libcufile [1.9.0.20|1.9.1.3] would require
+      │  │  └─ cuda-version >=12.4,<12.5.0a0 but there are no viable options
+      │  │     ├─ cuda-version 12.4 would require
+      │  │     │  └─ cudatoolkit ==12.4|=12.4, which conflicts with any installable versions previously reported;
+      │  │     └─ cuda-version 12.4 conflicts with any installable versions previously reported;
+      │  └─ libcufile 1.9.1.3 conflicts with any installable versions previously reported;
+      └─ libcurand >=10.3.0.86 but there are no viable options
+         ├─ libcurand 10.3.1.50 would require
+         │  └─ cuda-version [>=12.0,<12.1.0a0 *|>=12.0.0,<12.1.0a0] but there are no viable options
+         │     ├─ cuda-version [12.0|12.0.0], which cannot be installed (as previously explained);
+         │     └─ cuda-version 12.0 conflicts with any installable versions previously reported;
+         ├─ libcurand 10.3.2.106 would require
+         │  └─ cuda-version >=12.1,<12.2.0a0 but there are no viable options
+         │     ├─ cuda-version 12.1, which cannot be installed (as previously explained);
+         │     └─ cuda-version 12.1 conflicts with any installable versions previously reported;
+         ├─ libcurand 10.3.3.141 would require
+         │  └─ cuda-version >=12.2,<12.3.0a0 but there are no viable options
+         │     ├─ cuda-version 12.2, which cannot be installed (as previously explained);
+         │     └─ cuda-version 12.2 conflicts with any installable versions previously reported;
+         ├─ libcurand 10.3.4.107 would require
+         │  └─ cuda-version >=12.3,<12.4.0a0 but there are no viable options
+         │     ├─ cuda-version 12.3, which cannot be installed (as previously explained);
+         │     └─ cuda-version 12.3 conflicts with any installable versions previously reported;
+         ├─ libcurand [10.3.5.119|10.3.5.147] would require
+         │  └─ cuda-version >=12.4,<12.5.0a0 but there are no viable options
+         │     ├─ cuda-version 12.4, which cannot be installed (as previously explained);
+         │     └─ cuda-version 12.4 conflicts with any installable versions previously reported;
+         ├─ libcurand [10.3.6.39|10.3.6.82] would require
+         │  └─ cuda-version >=12.5,<12.6.0a0, which cannot be installed (as previously explained);
+         ├─ libcurand [10.3.7.37|10.3.7.68|10.3.7.77] would require
+         │  └─ cuda-version >=12.6,<12.7.0a0, which cannot be installed (as previously explained);
+         ├─ libcurand 10.3.9.55 would require
+         │  └─ cuda-version >=12.8,<12.9.0a0, which cannot be installed (as previously explained);
+         └─ libcurand 10.3.5.147 conflicts with any installable versions previously reported.
+
+Pins seem to be involved in the conflict. Currently pinned specs:
+ - python=3.12
+
+
+Channels:
+ - rapidsai
+ - nvidia
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package cuml-23.08.00-cuda11_py310_230809_gd7162cdea_0 requires libcumlprims 23.08.*, but none of the providers can be installed
+  - nothing provides _python_rc needed by python-3.12.0rc3-rc3_hab00c5b_1_cpython
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ cudatoolkit =10.1 is requested and can be installed;
+├─ cuml =23.8 is not installable because it requires
+│  └─ libcumlprims =23.8, which conflicts with any installable versions previously reported;
+├─ datashader is installable with the potential options
+│  ├─ datashader 0.13.1a would require
+│  │  └─ numba >=0.51 with the potential options
+│  │     ├─ numba [0.56.2|0.56.3|0.56.4|0.57.0|0.57.1] would require
+│  │     │  └─ cudatoolkit >=10.2, which conflicts with any installable versions previously reported;
+│  │     ├─ numba [0.58.1|0.59.0|0.59.1|0.60.0|0.61.0] would require
+│  │     │  └─ cudatoolkit >=11.2, which conflicts with any installable versions previously reported;
+│  │     ├─ numba [0.49.0|0.49.1|...|0.53.1] would require
+│  │     │  └─ python_abi =3.6 *_cp36m, which can be installed;
+│  │     ├─ numba [0.40.0|0.40.1|...|0.55.2] would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ numba [0.49.0|0.49.1|...|0.55.2] would require
+│  │     │  └─ python_abi =3.8 *_cp38 with the potential options
+│  │     │     ├─ python_abi 3.8 would require
+│  │     │     │  └─ python =3.8 *_cpython, which can be installed;
+│  │     │     └─ python_abi 3.8, which can be installed;
+│  │     ├─ numba [0.53.0|0.53.1|...|0.55.2] would require
+│  │     │  └─ python_abi =3.9 *_cp39 with the potential options
+│  │     │     ├─ python_abi 3.9 would require
+│  │     │     │  └─ python =3.9 *_cpython, which can be installed;
+│  │     │     └─ python_abi 3.9, which can be installed;
+│  │     ├─ numba [0.55.0|0.55.1|0.55.2] would require
+│  │     │  └─ python_abi =3.10 *_cp310 with the potential options
+│  │     │     ├─ python_abi 3.10 would require
+│  │     │     │  └─ python =3.10 *_cpython, which can be installed;
+│  │     │     └─ python_abi 3.10, which can be installed;
+│  │     └─ numba [0.51.2|0.52.0|...|0.61.0] conflicts with any installable versions previously reported;
+│  ├─ datashader [0.10.0|0.11.0|...|0.9.0] conflicts with any installable versions previously reported;
+│  └─ datashader 0.17.0 would require
+│     ├─ numba with the potential options
+│     │  ├─ numba [0.56.2|0.56.3|0.56.4|0.57.0|0.57.1], which cannot be installed (as previously explained);
+│     │  ├─ numba [0.58.1|0.59.0|0.59.1|0.60.0|0.61.0], which cannot be installed (as previously explained);
+│     │  ├─ numba [0.49.0|0.49.1|...|0.53.1], which can be installed (as previously explained);
+│     │  ├─ numba [0.40.0|0.40.1|...|0.55.2], which can be installed (as previously explained);
+│     │  ├─ numba [0.49.0|0.49.1|...|0.55.2], which can be installed (as previously explained);
+│     │  ├─ numba [0.53.0|0.53.1|...|0.55.2], which can be installed (as previously explained);
+│     │  ├─ numba [0.55.0|0.55.1|0.55.2], which can be installed (as previously explained);
+│     │  ├─ numba [0.51.2|0.52.0|...|0.61.0] conflicts with any installable versions previously reported;
+│     │  ├─ numba [0.36.1|0.36.2|0.38.0|0.38.1|0.40.0] would require
+│     │  │  └─ python >=3.5,<3.6.0a0, which can be installed;
+│     │  ├─ numba [0.36.1|0.36.2|...|0.48.0] would require
+│     │  │  └─ python >=3.6,<3.7.0a0, which can be installed;
+│     │  ├─ numba [0.38.0|0.38.1|...|0.47.0] would require
+│     │  │  └─ python >=2.7,<2.8.0a0, which can be installed;
+│     │  ├─ numba [0.47.0|0.48.0] would require
+│     │  │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│     │  └─ numba [0.35.0|0.36.1|...|0.50.1] conflicts with any installable versions previously reported;
+│     └─ python >=3.12,<3.13.0a0 but there are no viable options
+│        ├─ python [3.12.0|3.12.1|...|3.12.9] would require
+│        │  └─ python_abi =3.12 *_cp312, which conflicts with any installable versions previously reported;
+│        └─ python [3.12.0|3.12.1|...|3.12.9] conflicts with any installable versions previously reported;
+└─ python =3.12 is not installable because there are no viable options
+   ├─ python [3.12.0|3.12.1|...|3.12.9], which cannot be installed (as previously explained);
+   ├─ python 3.12.0rc3 would require
+   │  └─ _python_rc, which does not exist (perhaps a missing channel);
+   └─ python [3.12.0|3.12.1|...|3.12.9] conflicts with any installable versions previously reported.
+
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package dask-cuda-22.12.0-pyhd8ed1ab_0 requires pandas >=1.0,<1.6.0dev0, but none of the providers can be installed
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ dask-cuda is installable with the potential options
+│  ├─ dask-cuda [22.12.0|23.2.0|23.2.1] would require
+│  │  └─ pandas >=1.0,<1.6.0dev0 with the potential options
+│  │     ├─ pandas [1.3.4|1.3.5|...|1.5.3] would require
+│  │     │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│  │     ├─ pandas [1.5.1|1.5.2|1.5.3] would require
+│  │     │  └─ python >=3.11,<3.12.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.5.3] would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ pandas [1.1.3|1.1.4|...|1.5.3] would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.1.5] would require
+│  │     │  └─ python >=3.6,<3.7.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.3.5] would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.2.5] conflicts with any installable versions previously reported;
+│  │     └─ pandas [1.3.0|1.3.1|...|1.5.3] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda [23.10.0|23.4.0|23.6.0|23.8.0] would require
+│  │  └─ pandas >=1.3,<1.6.0dev0 with the potential options
+│  │     ├─ pandas [1.3.4|1.3.5|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.5.1|1.5.2|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.1.3|1.1.4|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.3.5], which can be installed (as previously explained);
+│  │     └─ pandas [1.3.0|1.3.1|...|1.5.3] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda [0.18.0|22.4.0] would require
+│  │  └─ click [=8.0.4 *|==8.0.4] with the potential options
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     └─ click 8.0.4 conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 0.19.0 would require
+│  │  └─ distributed >=2.22.0,<=2021.4.0 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0] would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0] would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0] would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0] would require
+│  │     │  └─ python >=3.6,<3.7.0a0, which can be installed;
+│  │     └─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.10.0 would require
+│  │  └─ distributed =2021.9.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     └─ distributed 2021.9.1 conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.6.0 would require
+│  │  └─ distributed >=2.22.0,<2021.5.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  │     └─ distributed [2021.4.1|2021.5.0] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.8.0 would require
+│  │  └─ distributed >=2.22.0,<=2021.7.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  │     ├─ distributed [2021.4.1|2021.5.0] conflicts with any installable versions previously reported;
+│  │     └─ distributed [2021.5.1|2021.6.0|2021.6.1|2021.6.2|2021.7.0] conflicts with any installable versions previously reported;
+│  └─ dask-cuda 22.2.0 would require
+│     └─ distributed >=2021.11.1,<=2022.1.0 with the potential options
+│        ├─ distributed [2021.11.1|2021.11.2|2021.12.0|2022.1.0] would require
+│        │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│        ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│        ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│        └─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+└─ pin on python 3.12.* is not installable because it requires
+   └─ python =3.12, which conflicts with any installable versions previously reported.
+
+Pins seem to be involved in the conflict. Currently pinned specs:
+ - python=3.12
+
+
+Channels:
+ - conda-forge
+ - defaults
+Platform: linux-64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+LibMambaUnsatisfiableError: Encountered problems while solving:
+  - package dask-cuda-22.12.0-pyhd8ed1ab_0 requires pandas >=1.0,<1.6.0dev0, but none of the providers can be installed
+
+Could not solve for environment specs
+The following packages are incompatible
+├─ dask-cuda is installable with the potential options
+│  ├─ dask-cuda [22.12.0|23.2.0|23.2.1] would require
+│  │  └─ pandas >=1.0,<1.6.0dev0 with the potential options
+│  │     ├─ pandas [1.3.4|1.3.5|...|1.5.3] would require
+│  │     │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│  │     ├─ pandas [1.5.1|1.5.2|1.5.3] would require
+│  │     │  └─ python >=3.11,<3.12.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.5.3] would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ pandas [1.1.3|1.1.4|...|1.5.3] would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.1.5] would require
+│  │     │  └─ python >=3.6,<3.7.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.3.5] would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.2.5] conflicts with any installable versions previously reported;
+│  │     └─ pandas [1.3.0|1.3.1|...|1.5.3] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda [23.10.0|23.4.0|23.6.0|23.8.0] would require
+│  │  └─ pandas >=1.3,<1.6.0dev0 with the potential options
+│  │     ├─ pandas [1.3.4|1.3.5|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.5.1|1.5.2|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.1.3|1.1.4|...|1.5.3], which can be installed (as previously explained);
+│  │     ├─ pandas [1.0.0|1.0.1|...|1.3.5], which can be installed (as previously explained);
+│  │     └─ pandas [1.3.0|1.3.1|...|1.5.3] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda [0.18.0|22.4.0] would require
+│  │  └─ click [=8.0.4 *|==8.0.4] with the potential options
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ click 8.0.4 would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     └─ click 8.0.4 conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 0.19.0 would require
+│  │  └─ distributed >=2.22.0,<=2021.4.0 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0] would require
+│  │     │  └─ python >=3.7,<3.8.0a0, which can be installed;
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0] would require
+│  │     │  └─ python >=3.8,<3.9.0a0, which can be installed;
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0] would require
+│  │     │  └─ python >=3.9,<3.10.0a0, which can be installed;
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0] would require
+│  │     │  └─ python >=3.6,<3.7.0a0, which can be installed;
+│  │     └─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.10.0 would require
+│  │  └─ distributed =2021.9.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     └─ distributed 2021.9.1 conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.6.0 would require
+│  │  └─ distributed >=2.22.0,<2021.5.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  │     └─ distributed [2021.4.1|2021.5.0] conflicts with any installable versions previously reported;
+│  ├─ dask-cuda 21.8.0 would require
+│  │  └─ distributed >=2.22.0,<=2021.7.1 with the potential options
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.3.0], which can be installed (as previously explained);
+│  │     ├─ distributed [2.22.0|2.23.0|...|2021.4.0] conflicts with any installable versions previously reported;
+│  │     ├─ distributed [2021.4.1|2021.5.0] conflicts with any installable versions previously reported;
+│  │     └─ distributed [2021.5.1|2021.6.0|2021.6.1|2021.6.2|2021.7.0] conflicts with any installable versions previously reported;
+│  └─ dask-cuda 22.2.0 would require
+│     └─ distributed >=2021.11.1,<=2022.1.0 with the potential options
+│        ├─ distributed [2021.11.1|2021.11.2|2021.12.0|2022.1.0] would require
+│        │  └─ python >=3.10,<3.11.0a0, which can be installed;
+│        ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│        ├─ distributed [2.22.0|2.23.0|...|2022.1.0], which can be installed (as previously explained);
+│        └─ distributed [2.30.0|2.30.1|...|2022.1.0], which can be installed (as previously explained);
+└─ pin on python 3.12.* is not installable because it requires
+   └─ python =3.12, which conflicts with any installable versions previously reported.
+
+Pins seem to be involved in the conflict. Currently pinned specs:
+ - python=3.12
+
+
+Collecting transformers
+  Downloading transformers-4.48.3-py3-none-any.whl.metadata (44 kB)
+Collecting accelerate
+  Downloading accelerate-1.3.0-py3-none-any.whl.metadata (19 kB)
+Collecting filelock (from transformers)
+  Downloading filelock-3.17.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting huggingface-hub<1.0,>=0.24.0 (from transformers)
+  Downloading huggingface_hub-0.28.1-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: numpy>=1.17 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from transformers) (1.26.4)
+Requirement already satisfied: packaging>=20.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from transformers) (24.2)
+Requirement already satisfied: pyyaml>=5.1 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from transformers) (6.0.2)
+Collecting regex!=2019.12.17 (from transformers)
+  Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (40 kB)
+Requirement already satisfied: requests in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from transformers) (2.32.3)
+Collecting tokenizers<0.22,>=0.21 (from transformers)
+  Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.7 kB)
+Collecting safetensors>=0.4.1 (from transformers)
+  Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.8 kB)
+Collecting tqdm>=4.27 (from transformers)
+  Downloading tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: psutil in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from accelerate) (5.9.0)
+Collecting torch>=2.0.0 (from accelerate)
+  Downloading torch-2.6.0-cp312-cp312-manylinux1_x86_64.whl.metadata (28 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from huggingface-hub<1.0,>=0.24.0->transformers) (2024.12.0)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from huggingface-hub<1.0,>=0.24.0->transformers) (4.12.2)
+Collecting networkx (from torch>=2.0.0->accelerate)
+  Downloading networkx-3.4.2-py3-none-any.whl.metadata (6.3 kB)
+Requirement already satisfied: jinja2 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch>=2.0.0->accelerate) (3.1.5)
+Collecting nvidia-cuda-nvrtc-cu12==12.4.127 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-runtime-cu12==12.4.127 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cuda-cupti-cu12==12.4.127 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cudnn-cu12==9.1.0.70 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cublas-cu12==12.4.5.8 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cufft-cu12==11.2.1.3 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-curand-cu12==10.3.5.147 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cusolver-cu12==11.6.1.9 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparse-cu12==12.3.1.170 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparselt-cu12==0.6.2 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_cusparselt_cu12-0.6.2-py3-none-manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting nvidia-nccl-cu12==2.21.5 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvtx-cu12==12.4.127 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-nvjitlink-cu12==12.4.127 (from torch>=2.0.0->accelerate)
+  Downloading nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl.metadata (1.5 kB)
+Collecting triton==3.2.0 (from torch>=2.0.0->accelerate)
+  Downloading triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (1.4 kB)
+Requirement already satisfied: setuptools in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch>=2.0.0->accelerate) (75.8.0)
+Collecting sympy==1.13.1 (from torch>=2.0.0->accelerate)
+  Downloading sympy-1.13.1-py3-none-any.whl.metadata (12 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy==1.13.1->torch>=2.0.0->accelerate)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Requirement already satisfied: charset-normalizer<4,>=2 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from requests->transformers) (3.3.2)
+Requirement already satisfied: idna<4,>=2.5 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from requests->transformers) (3.7)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from requests->transformers) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from requests->transformers) (2025.1.31)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from jinja2->torch>=2.0.0->accelerate) (3.0.2)
+Downloading transformers-4.48.3-py3-none-any.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 63.4 MB/s eta 0:00:00
+Downloading accelerate-1.3.0-py3-none-any.whl (336 kB)
+Downloading huggingface_hub-0.28.1-py3-none-any.whl (464 kB)
+Downloading regex-2024.11.6-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (796 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 796.9/796.9 kB 25.6 MB/s eta 0:00:00
+Downloading safetensors-0.5.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (461 kB)
+Downloading tokenizers-0.21.0-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.0/3.0 MB 53.9 MB/s eta 0:00:00
+Downloading torch-2.6.0-cp312-cp312-manylinux1_x86_64.whl (766.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 766.6/766.6 MB 40.4 MB/s eta 0:00:00
+Downloading nvidia_cublas_cu12-12.4.5.8-py3-none-manylinux2014_x86_64.whl (363.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 363.4/363.4 MB 71.8 MB/s eta 0:00:00
+Downloading nvidia_cuda_cupti_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (13.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 13.8/13.8 MB 84.3 MB/s eta 0:00:00
+Downloading nvidia_cuda_nvrtc_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (24.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 24.6/24.6 MB 79.0 MB/s eta 0:00:00
+Downloading nvidia_cuda_runtime_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (883 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 883.7/883.7 kB 30.0 MB/s eta 0:00:00
+Downloading nvidia_cudnn_cu12-9.1.0.70-py3-none-manylinux2014_x86_64.whl (664.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 664.8/664.8 MB 65.4 MB/s eta 0:00:00
+Downloading nvidia_cufft_cu12-11.2.1.3-py3-none-manylinux2014_x86_64.whl (211.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 211.5/211.5 MB 76.6 MB/s eta 0:00:00
+Downloading nvidia_curand_cu12-10.3.5.147-py3-none-manylinux2014_x86_64.whl (56.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 56.3/56.3 MB 81.3 MB/s eta 0:00:00
+Downloading nvidia_cusolver_cu12-11.6.1.9-py3-none-manylinux2014_x86_64.whl (127.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 127.9/127.9 MB 91.9 MB/s eta 0:00:00
+Downloading nvidia_cusparse_cu12-12.3.1.170-py3-none-manylinux2014_x86_64.whl (207.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 207.5/207.5 MB 80.4 MB/s eta 0:00:00
+Downloading nvidia_cusparselt_cu12-0.6.2-py3-none-manylinux2014_x86_64.whl (150.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 150.1/150.1 MB 57.1 MB/s eta 0:00:00
+Downloading nvidia_nccl_cu12-2.21.5-py3-none-manylinux2014_x86_64.whl (188.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 188.7/188.7 MB 84.5 MB/s eta 0:00:00
+Downloading nvidia_nvjitlink_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (21.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.1/21.1 MB 61.0 MB/s eta 0:00:00
+Downloading nvidia_nvtx_cu12-12.4.127-py3-none-manylinux2014_x86_64.whl (99 kB)
+Downloading sympy-1.13.1-py3-none-any.whl (6.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.2/6.2 MB 70.7 MB/s eta 0:00:00
+Downloading triton-3.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (253.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 253.2/253.2 MB 38.7 MB/s eta 0:00:00
+Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+Downloading filelock-3.17.0-py3-none-any.whl (16 kB)
+Downloading networkx-3.4.2-py3-none-any.whl (1.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.7/1.7 MB 43.9 MB/s eta 0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 15.9 MB/s eta 0:00:00
+Installing collected packages: triton, nvidia-cusparselt-cu12, mpmath, tqdm, sympy, safetensors, regex, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufft-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, networkx, filelock, nvidia-cusparse-cu12, nvidia-cudnn-cu12, huggingface-hub, tokenizers, nvidia-cusolver-cu12, transformers, torch, accelerate
+Successfully installed accelerate-1.3.0 filelock-3.17.0 huggingface-hub-0.28.1 mpmath-1.3.0 networkx-3.4.2 nvidia-cublas-cu12-12.4.5.8 nvidia-cuda-cupti-cu12-12.4.127 nvidia-cuda-nvrtc-cu12-12.4.127 nvidia-cuda-runtime-cu12-12.4.127 nvidia-cudnn-cu12-9.1.0.70 nvidia-cufft-cu12-11.2.1.3 nvidia-curand-cu12-10.3.5.147 nvidia-cusolver-cu12-11.6.1.9 nvidia-cusparse-cu12-12.3.1.170 nvidia-cusparselt-cu12-0.6.2 nvidia-nccl-cu12-2.21.5 nvidia-nvjitlink-cu12-12.4.127 nvidia-nvtx-cu12-12.4.127 regex-2024.11.6 safetensors-0.5.2 sympy-1.13.1 tokenizers-0.21.0 torch-2.6.0 tqdm-4.67.1 transformers-4.48.3 triton-3.2.0
+Looking in links: https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch2.0/index.html
+ERROR: Could not find a version that satisfies the requirement detectron2 (from versions: none)
+ERROR: No matching distribution found for detectron2
+Collecting efficientnet-pytorch
+  Downloading efficientnet_pytorch-0.7.1.tar.gz (21 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting face_recognition
+  Downloading face_recognition-1.3.0-py2.py3-none-any.whl.metadata (21 kB)
+Collecting opencv-python-headless
+  Downloading opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+Collecting scikit-image
+  Downloading scikit_image-0.25.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (14 kB)
+Requirement already satisfied: torch in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from efficientnet-pytorch) (2.6.0)
+Requirement already satisfied: face-recognition-models>=0.3.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from face_recognition) (0.3.0)
+Requirement already satisfied: Click>=6.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from face_recognition) (8.1.7)
+Requirement already satisfied: dlib>=19.7 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from face_recognition) (19.24.2)
+Requirement already satisfied: numpy in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from face_recognition) (1.26.4)
+Requirement already satisfied: Pillow in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from face_recognition) (10.3.0)
+Requirement already satisfied: scipy>=1.11.2 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from scikit-image) (1.15.1)
+Requirement already satisfied: networkx>=3.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from scikit-image) (3.4.2)
+Collecting imageio!=2.35.0,>=2.33 (from scikit-image)
+  Downloading imageio-2.37.0-py3-none-any.whl.metadata (5.2 kB)
+Collecting tifffile>=2022.8.12 (from scikit-image)
+  Downloading tifffile-2025.1.10-py3-none-any.whl.metadata (31 kB)
+Requirement already satisfied: packaging>=21 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from scikit-image) (24.2)
+Collecting lazy-loader>=0.4 (from scikit-image)
+  Downloading lazy_loader-0.4-py3-none-any.whl.metadata (7.6 kB)
+Requirement already satisfied: filelock in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (3.17.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (4.12.2)
+Requirement already satisfied: jinja2 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (3.1.5)
+Requirement already satisfied: fsspec in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (2024.12.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.4.127 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.127)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.4.127 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.127)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.4.127 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.127)
+Requirement already satisfied: nvidia-cudnn-cu12==9.1.0.70 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (9.1.0.70)
+Requirement already satisfied: nvidia-cublas-cu12==12.4.5.8 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.5.8)
+Requirement already satisfied: nvidia-cufft-cu12==11.2.1.3 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (11.2.1.3)
+Requirement already satisfied: nvidia-curand-cu12==10.3.5.147 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (10.3.5.147)
+Requirement already satisfied: nvidia-cusolver-cu12==11.6.1.9 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (11.6.1.9)
+Requirement already satisfied: nvidia-cusparse-cu12==12.3.1.170 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.3.1.170)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.2 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (0.6.2)
+Requirement already satisfied: nvidia-nccl-cu12==2.21.5 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (2.21.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.4.127 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.127)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.4.127 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (12.4.127)
+Requirement already satisfied: triton==3.2.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (3.2.0)
+Requirement already satisfied: setuptools in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (75.8.0)
+Requirement already satisfied: sympy==1.13.1 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from torch->efficientnet-pytorch) (1.13.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from sympy==1.13.1->torch->efficientnet-pytorch) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/egusmao/miniconda/envs/ml/lib/python3.12/site-packages (from jinja2->torch->efficientnet-pytorch) (3.0.2)
+Downloading face_recognition-1.3.0-py2.py3-none-any.whl (15 kB)
+Downloading opencv_python_headless-4.11.0.86-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (50.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.0/50.0 MB 70.7 MB/s eta 0:00:00
+Downloading scikit_image-0.25.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (15.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.0/15.0 MB 22.5 MB/s eta 0:00:00
+Downloading imageio-2.37.0-py3-none-any.whl (315 kB)
+Downloading lazy_loader-0.4-py3-none-any.whl (12 kB)
+Downloading tifffile-2025.1.10-py3-none-any.whl (227 kB)
+Building wheels for collected packages: efficientnet-pytorch
+  Building wheel for efficientnet-pytorch (setup.py): started
+  Building wheel for efficientnet-pytorch (setup.py): finished with status 'done'
+  Created wheel for efficientnet-pytorch: filename=efficientnet_pytorch-0.7.1-py3-none-any.whl size=16477 sha256=5fdbb59c3e76ee96cf6607d0441cc5b729eb3539cc40626dfae23a5ed901f22f
+  Stored in directory: /home/egusmao/.cache/pip/wheels/9c/3f/43/e6271c7026fe08c185da2be23c98c8e87477d3db63f41f32ad
+Successfully built efficientnet-pytorch
+Installing collected packages: tifffile, opencv-python-headless, lazy-loader, imageio, face_recognition, scikit-image, efficientnet-pytorch
+Successfully installed efficientnet-pytorch-0.7.1 face_recognition-1.3.0 imageio-2.37.0 lazy-loader-0.4 opencv-python-headless-4.11.0.86 scikit-image-0.25.1 tifffile-2025.1.10
+ERROR: Could not find a version that satisfies the requirement cupy-cuda101 (from versions: none)
+ERROR: No matching distribution found for cupy-cuda101
+Will remove 50 (217.7 MB) tarball(s).
+Will remove 1 index cache(s).
+Will remove 38 (222.5 MB) package(s).
+There are no tempfile(s) to remove.
+There are no logfile(s) to remove.
+Files removed: 203 (3141.6 MB)

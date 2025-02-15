@@ -12,7 +12,8 @@
 #PBS -V
 #PBS -W umask=002
 
-#PBS -l nodes=node2:ppn=4:gpus=1
+#PBS -l nodes=1:ppn=4
+#PBS -l ngpus=1
 #PBS -l mem=48gb
 #PBS -l walltime=24:00:00
 

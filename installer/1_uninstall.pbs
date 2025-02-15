@@ -38,7 +38,7 @@ conda remove face_recognition opencv opencv-python-headless scikit-image -y
 conda remove transformers accelerate cuml -y
 
 # Remove packages that may have been installed through pip
-pip uninstall --no-input transformers accelerate detectron2 efficientnet-pytorch face_recognition opencv-python-headless scikit-image cupy-cuda101
+pip uninstall -y transformers accelerate detectron2 efficientnet-pytorch face_recognition opencv-python-headless scikit-image cupy-cuda101
 
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
