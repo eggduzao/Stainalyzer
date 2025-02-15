@@ -1,0 +1,72 @@
+#!/bin/bash
+
+#PBS -N 2_uninstall_gpu
+#PBS -o 2_uninstall_gpu.out
+#PBS -j oe
+
+#PBS -q gpuq
+# workq - Fila default e sem restrições. Utiliza todos os nós.
+# fatq - fila para os fat nodes.
+# normq - fila para nodes comuns.
+# gpuq - fila para processamento em GPU.
+#PBS -V
+#PBS -W umask=002
+
+#PBS -l nodes=1:ppn=4
+#PBS -l ngpus=1
+#PBS -l mem=48gb
+#PBS -l walltime=12:00:00
+
+# cd $PBS_O_WORKDIR
+
+# Navigate to the projects directory
+cd ~/projects/Stainalyzer/installer/
+
+# Load Conda
+source ~/miniconda/etc/profile.d/conda.sh
+conda activate ml
+
+# Clean Cache to Avoid Conflicts
+conda clean --all -y
+pip cache purge
+pip install --upgrade pip
+
+# Uninstall problematic GPU-related packages with conda
+conda uninstall -y cuml
+conda uninstall -y tensorflow-gpu
+conda uninstall -y faiss-gpu
+conda uninstall -y dask-cuda
+conda uninstall -y pytorch-cuda
+conda uninstall -y xgboost
+conda uninstall -y lightgbm
+conda uninstall -y keras
+conda uninstall -y keras-tuner
+conda uninstall -y cudatoolkit
+
+# Uninstall problematic GPU-related packages with pip
+pip uninstall -y cupy-cuda101
+pip uninstall -y detectron2
+pip uninstall -y transformers
+pip uninstall -y accelerate
+pip uninstall -y efficientnet-pytorch
+pip uninstall -y face_recognition
+pip uninstall -y opencv-python-headless
+pip uninstall -y scikit-image
+pip uninstall -y nvidia-cublas-cu12
+pip uninstall -y nvidia-cuda-cupti-cu12
+pip uninstall -y nvidia-cuda-nvrtc-cu12
+pip uninstall -y nvidia-cuda-runtime-cu12
+pip uninstall -y nvidia-cudnn-cu12
+pip uninstall -y nvidia-cufft-cu12
+pip uninstall -y nvidia-curand-cu12
+pip uninstall -y nvidia-cusolver-cu12
+pip uninstall -y nvidia-cusparse-cu12
+pip uninstall -y nvidia-cusparselt-cu12
+pip uninstall -y nvidia-nccl-cu12
+pip uninstall -y nvidia-nvjitlink-cu12
+pip uninstall -y nvidia-nvtx-cu12
+
+# Clean Conda and Pip caches
+conda clean --all -y
+pip cache purge
+
