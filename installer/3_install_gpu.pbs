@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#PBS -N install_gpu
-#PBS -o install_gpu.out
+#PBS -N 3_install_gpu
+#PBS -o 3_install_gpu.out
 #PBS -j oe
 
 #PBS -q gpuq
@@ -29,24 +29,31 @@ conda activate ml
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
 pip cache purge
-pip install --upgrade pip
+pip install --upgrade pip --no-input
 
-# Install GPU-optimized packages
-# conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch -y
-# conda install tensorflow-gpu cudatoolkit=10.1 -c conda-forge -y
-# conda install keras keras-tuner -c conda-forge -y
-# conda install faiss-gpu -c conda-forge -y
-# conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=23.08 python=3.12 cudatoolkit=10.1 -y
-conda install -c rapidsai -c nvidia -c conda-forge -c defaults cuml=21.06 python=3.12 cudatoolkit=10.1 -y
-# conda install xgboost dask-cuda -c conda-forge -y
-# conda install lightgbm dask-cuda -c conda-forge -y
-# pip install --no-input transformers accelerate
-# pip install --no-input detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch2.0/index.html
-pip install --no-input detectron2==0.4 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu101/torch1.7/index.html
-# pip install --no-input efficientnet-pytorch face_recognition opencv-python-headless scikit-image
-# pip install --no-input cupy-cuda101
-pip install cupy-cuda101 --extra-index-url https://pypi.nvidia.com
-# pip install cupy-cuda101==13.0.0 --extra-index-url https://pypi.nvidia.com
+# Install PyTorch (CUDA 11.7 compatible)
+conda install -c pytorch -c nvidia pytorch torchvision torchaudio pytorch-cuda=11.7 -y
+
+# Install TensorFlow (compatible with CUDA 11.7)
+conda install -c conda-forge tensorflow cudatoolkit=11.7 -y
+
+# Install RAPIDS cuML for CUDA 11.7
+conda install -c rapidsai -c conda-forge -c nvidia cuml=21.12 python=3.12 cudatoolkit=11.7 -y
+
+# Install FAISS for GPU
+conda install -c conda-forge faiss-gpu cudatoolkit=11.7 -y
+
+# Install DASK-CUDA
+conda install -c rapidsai -c conda-forge -c nvidia dask-cuda cudatoolkit=11.7 -y
+
+# Install Cupy with CUDA 11.7
+pip install --no-input cupy-cuda117 --extra-index-url https://pypi.nvidia.com
+
+# Other machine learning tools
+pip install --no-input transformers accelerate xgboost lightgbm
+
+# Additional tools
+pip install --no-input opencv-python-headless scikit-image face_recognition efficientnet-pytorch
 
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
