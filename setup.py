@@ -50,8 +50,8 @@ setup(
 
 	# List of dependencies that will be installed when someone installs your package.
 	install_requires=[
-	    'numpy,       					# For numerical computations, compatible with numpy 2.0.2
-	    'scipy,       					# Scientific computing library, compatible with scipy 1.13.1
+	    'numpy',       					# For numerical computations, compatible with numpy 2.0.2
+	    'scipy',       					# Scientific computing library, compatible with scipy 1.13.1
 	    'torch',        				# PyTorch for deep learning, compatible with torch 2.6.0
 	    'torchvision', 					# Image transformations and datasets for PyTorch, compatible with torchvision 0.21.0
 	    'pandas',       				# Data manipulation and analysis, compatible with pandas 2.2.3
