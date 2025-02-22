@@ -23,7 +23,7 @@ cd ~/projects/Stainalyzer/installer/
 
 # Load Conda
 source ~/miniconda/etc/profile.d/conda.sh
-conda activate ml
+conda activate dl
 
 # Clean Cache to Avoid Conflicts
 conda clean --all -y
