@@ -21,6 +21,9 @@
 # Environments
 source $HOME"/env/bin/activate"
 
+# Ensure OpenGL libraries are accessible
+export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH"
+
 # Current Job Parameter
 basepath="$BASEPATH"
 input_location="$INPUT"
