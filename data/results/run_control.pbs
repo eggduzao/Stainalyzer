@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #PBS -N run_control
-#PBS -o run_control_${PBS_ARRAY_INDEX}.out
-#PBS -e run_control_${PBS_ARRAY_INDEX}.err
+#PBS -o run_control_${INDEX}.out
+#PBS -e run_control_${INDEX}.err
 
 #PBS -q workq
 # workq - Fila default e sem restrições. Utiliza todos os nós.
@@ -16,28 +16,21 @@
 #PBS -l mem=48gb
 #PBS -l walltime=12:00:00
 
-#PBS -J 0-8   # Array
-
 # cd $PBS_O_WORKDIR
 
 # Environments
-source $HOME/env/bin/activate
-
-# Parameters
-BASEPATH="/storage2/egusmao/projects/Stainalyzer/data/"
-INPUT_PATH=$BASEPATH"/DAB_Grupo_Controle_Clean/DAB_Grupo_Controle/"
-OUTPUT_PATH=$BASEPATH"results/DAB_Grupo_Controle/"
-PARAMS=("GRUPO_CONTROLE_PE_19_12_2024" "GRUPO_CONTROLE_PE_ACE2" "GRUPO_CONTROLE_PE_CD28" "GRUPO_CONTROLE_PE_CTLA4" "GRUPO_CONTROLE_PE_HLAG2" "GRUPO_CONTROLE_PE_HLAG5" "GRUPO_CONTROLE_PE_PD1" "GRUPO_CONTROLE_PE_PDL1" "GRUPO_CONTROLE_PE_SPIKE")
+source $HOME"/env/bin/activate"
 
 # Current Job Parameter
-INPUT_PATH=$INPUT_PATH${PARAMS[$PBS_ARRAY_INDEX]}
-OUTPUT_PATH=$OUTPUT_PATH${PARAMS[$PBS_ARRAY_INDEX]}
-ROOT_PATH="DAB_IMIP_Tratamento"
+basepath="$BASEPATH"
+input_location="$INPUT"
+output_location="$OUTPUT"
+root_name="$ROOT"
 
 # Create output path and move to input location
-mkdir -p $OUTPUT_PATH
-cd $BASEPATH
+mkdir -p $output_location
+cd $basepath
 
 # Uncompress Control
-Stainalyzer --severity 0.5 $INPUT_PATH $OUTPUT_PATH $ROOT_PATH
+Stainalyzer --severity 0.5 $input_location $output_location $root_name
 
