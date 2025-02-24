@@ -1,8 +1,8 @@
 #!/bin/bash
 
-#PBS -N run_treatment
-#PBS -o run_treatment_${PBS_ARRAY_INDEX}.out
-#PBS -e run_treatment_${PBS_ARRAY_INDEX}.err
+#PBS -N run_control
+#PBS -o run_control_${PBS_ARRAY_INDEX}.out
+#PBS -e run_control_${PBS_ARRAY_INDEX}.err
 
 #PBS -q workq
 # workq - Fila default e sem restrições. Utiliza todos os nós.
@@ -25,9 +25,9 @@ source $HOME/env/bin/activate
 
 # Parameters
 BASEPATH="/storage2/egusmao/projects/Stainalyzer/data/"
-INPUT_PATH=$BASEPATH"/DAB_IMIP_Tratamento_Clean/DAB_IMIP_Tratamento/"
-OUTPUT_PATH=$BASEPATH"results/DAB_IMIP_Tratamento/"
-PARAMS=("IMIP_ACE2" "IMIP_CD28" "IMIP_CTLA4" "IMIP_FOTOS_NOVAS" "IMIP_HLAG2" "IMIP_HLAG5" "IMIP_PD1" "IMIP_PDL1" "IMIP_SPIKE")
+INPUT_PATH=$BASEPATH"/DAB_Grupo_Controle_Clean/DAB_Grupo_Controle/"
+OUTPUT_PATH=$BASEPATH"results/DAB_Grupo_Controle/"
+PARAMS=("GRUPO_CONTROLE_PE_19_12_2024" "GRUPO_CONTROLE_PE_ACE2" "GRUPO_CONTROLE_PE_CD28" "GRUPO_CONTROLE_PE_CTLA4" "GRUPO_CONTROLE_PE_HLAG2" "GRUPO_CONTROLE_PE_HLAG5" "GRUPO_CONTROLE_PE_PD1" "GRUPO_CONTROLE_PE_PDL1" "GRUPO_CONTROLE_PE_SPIKE")
 
 # Current Job Parameter
 INPUT_PATH=$INPUT_PATH${PARAMS[$PBS_ARRAY_INDEX]}

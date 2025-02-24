@@ -58,7 +58,7 @@ def parse_args():
     """
     parser = argparse.ArgumentParser(
         description="Stainalyzer Tool: A robust tool for DAB-stained image analysis in microscopy.",
-        epilog="Example Usage: stainalyzer /path/to/input /path/to/output root_folder --severity 0.8"
+        epilog="Example Usage: Stainalyzer /path/to/input/root_folder/ /path/to/output root_folder --severity 0.5"
     )
 
     # Positional arguments
@@ -82,8 +82,8 @@ def parse_args():
     parser.add_argument(
         "--severity",
         type=float,
-        default=1.0,
-        help="Specifies the training severity (default: 1.0)."
+        default=0.5,
+        help="Specifies the training severity from 0.0 (increase false positives) to 1.0 (decrease true positives) (default: 0.5)."
     )
 
     # Version and Help

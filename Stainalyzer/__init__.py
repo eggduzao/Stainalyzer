@@ -1,4 +1,4 @@
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 from .trainer import DABDistribution, Trainer
 from .filters import DABFilters, Mask

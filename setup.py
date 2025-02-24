@@ -60,8 +60,11 @@ setup(
 	    'seaborn',    				    # Data visualization, compatible with seaborn 0.13.2
 	    'Pillow',      				    # Python Imaging Library, compatible with Pillow 10.4.0
 	    'matplotlib',  				    # Plotting and visualization, compatible with matplotlib 3.9.2
-	    'scikit-learn' 				    # Machine learning utilities, compatible with scikit-learn 1.5.2
-	],
+	    'scikit-learn',				    # Machine learning utilities, compatible with scikit-learn 1.5.2
+	    'scikit-image',					# Machine learning image utilities, compatible with scikit-image 0.25.0
+	    'colour', 						# Color science utilities, compatible with colour 0.4.6
+	    'sympy'							# Symbolic mathematics library, compatible with sympy 4.1.1
+	],						
 
     # Additional groups of dependencies, e.g., for development or testing.
 	extras_require={
