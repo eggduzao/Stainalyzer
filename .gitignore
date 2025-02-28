@@ -1,8 +1,38 @@
-# Data
-data/raw/Neila_DAB/
-data/raw/SegPath/
-data/interim/Neila_DAB/
-data/processed/Neila_DAB/
+
+# Raw Data
+data/raw/Neila_DAB/DAB_Grupo_Controle
+data/raw/Neila_DAB/DAB_IMIP_Tratamento
+data/raw/SegPath/aSMA_SmoothMuscle
+data/raw/SegPath/CD3CD20_Lymphocyte
+data/raw/SegPath/aSMA_SmoothMuscle.tar.gz
+data/raw/SegPath/CD3CD20_Lymphocyte.tar.gz
+data/raw/SegPath/CD45RB_Leukocyte.tar.gz
+data/raw/SegPath/CD235a_RBC.tar.gz
+data/raw/SegPath/ERG_Endothelium.tar.gz
+data/raw/SegPath/MIST1_PlasmaCell.tar.gz
+data/raw/SegPath/MNDA_MyeloidCell.tar.gz
+data/raw/SegPath/panCK_Epithelium.tar.gz
+
+# Interim Data
+data/interim/Neila_DAB/dab_negative
+data/interim/Neila_DAB/dab_positive
+data/interim/Neila_DAB/DAB_Training_Input
+data/interim/Neila_DAB/DAB_Training_Output
+data/interim/Neila_DAB/DAB_Training_Output_Real
+data/interim/Neila_DAB/examples
+data/interim/Neila_DAB/input
+data/interim/Neila_DAB/input_test
+data/interim/Neila_DAB/output
+data/interim/Neila_DAB/output_test
+data/interim/Neila_DAB/selected_controle
+
+# Processed Data
+data/processed/Neila_DAB/DAB_Grupo_Controle_Clean
+data/processed/Neila_DAB/DAB_IMIP_Tratamento_Clean
+
+# Results Data
+data/results/Neila_DAB/DAB_Grupo_Controle/
+data/results/Neila_DAB/DAB_Grupo_Controle/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
