@@ -32,7 +32,7 @@ data/processed/Neila_DAB/DAB_IMIP_Tratamento_Clean
 
 # Results Data
 data/results/Neila_DAB/DAB_Grupo_Controle/
-data/results/Neila_DAB/DAB_Grupo_Controle/
+data/results/Neila_DAB/DAB_IMIP_Tratamento/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
