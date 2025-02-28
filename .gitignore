@@ -1,23 +1,8 @@
 # Data
-data/DAB_Grupo_Controle/
-data/DAB_Grupo_Controle_Clean.tar.gz
-data/DAB_Grupo_Controle_Clean/
-data/DAB_IMIP_Tratamento/
-data/DAB_IMIP_Tratamento_Clean.tar.gz
-data/DAB_IMIP_Tratamento_Clean/
-data/aSMA/
-data/dab_negative/
-data/dab_positive/
-data/examples/
-data/input/
-data/input_test/
-data/output/
-data/output_test/
-data/selected_controle/
-
-# Tests
-tests/DAB_Training_Output/
-tests/DAB_Training_Output_Real/
+data/raw/Neila_DAB/
+data/raw/SegPath/
+data/interim/Neila_DAB/
+data/processed/Neila_DAB/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
