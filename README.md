@@ -137,23 +137,23 @@ d\mathbf{z}_t = \mu(\mathbf{z}_t, t) dt + \sigma(\mathbf{z}_t, t) d\mathbf{W}_t,
 where:
 
 ```math
-\( \mathbf{z}_t \)
+\mathbf{z}_t
 ```
 is the latent representation at time \( t \), 
 
 ```math
-\( \mu(\mathbf{z}_t, t) \)
+\mu(\mathbf{z}_t, t)
 ```
 is the drift term,
 
 ```math
- \( \sigma(\mathbf{z}_t, t) \)
+\sigma(\mathbf{z}_t, t) ,
 ``` 
 
 is the diffusion coefficient, and 
 
 ```math
-\( \mathbf{W}_t \) ,
+\mathbf{W}_t ,
 ```
 
 is a Wiener process modeling Brownian motion.
