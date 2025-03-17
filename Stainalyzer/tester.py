@@ -331,6 +331,42 @@ class Tester:
         else:
             print(f"[LOG]: {message}")
 
+    def _generate(self):
+
+        # numpy.random
+
+        # Distribution    Function    Parameters
+        # Uniform numpy.random.uniform(low, high, size=N) low (min), high (max)
+        # Normal (Gaussian)   numpy.random.normal(loc, scale, size=N) loc (mean), scale (std dev)
+        # Log-Normal  numpy.random.lognormal(mean, sigma, size=N) mean, sigma
+        # Exponential numpy.random.exponential(scale, size=N) scale (1/λ)
+        # Gamma   numpy.random.gamma(shape, scale, size=N)    shape, scale
+        # Beta    numpy.random.beta(a, b, size=N) a, b
+        # Chi-Square  numpy.random.chisquare(df, size=N)  df (degrees of freedom)
+        # Dirichlet   numpy.random.dirichlet(alpha, size=N)   alpha (parameter vector)
+        # Poisson numpy.random.poisson(lam, size=N)   lam (λ, mean number of events)
+        # Binomial    numpy.random.binomial(n, p, size=N) n (trials), p (success prob)
+        # Geometric   numpy.random.geometric(p, size=N)   p (success probability)
+
+        # scipy.stats
+
+        # Distribution    Function    Parameters
+        # Uniform scipy.stats.uniform.rvs(loc, scale, size=N) loc, scale
+        # Normal (Gaussian)   scipy.stats.norm.rvs(loc, scale, size=N)    loc, scale
+        # Log-Normal  scipy.stats.lognorm.rvs(sigma, loc, scale, size=N)  sigma, loc, scale
+        # Exponential scipy.stats.expon.rvs(scale, size=N)    scale (1/λ)
+        # Gamma   scipy.stats.gamma.rvs(shape, scale, size=N) shape, scale
+        # Beta    scipy.stats.beta.rvs(a, b, size=N)  a, b
+        # Chi-Square  scipy.stats.chi2.rvs(df, size=N)    df (degrees of freedom)
+        # Dirichlet   scipy.stats.dirichlet.rvs(alpha, size=N)    alpha (parameter vector)
+        # Poisson scipy.stats.poisson.rvs(mu, size=N) mu (mean λ)
+        # Binomial    scipy.stats.binom.rvs(n, p, size=N) n, p
+        # Negative Binomial   scipy.stats.nbinom.rvs(n, p, size=N)    n, p
+        # Geometric   scipy.stats.geom.rvs(p, size=N) p
+        # Student’s t scipy.stats.t.rvs(df, size=N)   df
+        # Weibull scipy.stats.weibull_min.rvs(c, size=N)  c (shape parameter)
+        # Cauchy  scipy.stats.cauchy.rvs(loc, scale, size=N)  loc, scale
+
     def __repr__(self):
         """
         Representation of the Tester class.
