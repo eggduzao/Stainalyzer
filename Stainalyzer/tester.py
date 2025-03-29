@@ -210,15 +210,16 @@ class Tester:
                 print(f"[ERROR]: Evaluation failed for {file_name}. Reason: {e}")
 
         # Calculate final metrics
-        # TODO - Implement metric calculations based on accumulated results
-        # Example:
-        metrics["accuracy"] = 0.9  # Replace with actual calculation
-        metrics["precision"] = 0.85
-        metrics["recall"] = 0.88
-        metrics["f1_score"] = 0.86
+        metrics["accuracy"] = 0.0
+        metrics["precision"] = 0.0
+        metrics["recall"] = 0.0
+        metrics["f1_score"] = 0.0
 
         print(f"[EVALUATION COMPLETE]: Metrics calculated: {metrics}")
         return metrics
+
+    def interpolate(self):
+        pass
 
     def compare(self, other_model, metric='Wasserstein', **kwargs):
         """
@@ -333,6 +334,7 @@ class Tester:
 
     def _generate(self):
 
+        pass
         # numpy.random
 
         # Distribution    Function    Parameters

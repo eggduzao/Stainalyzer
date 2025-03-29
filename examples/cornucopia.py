@@ -1,5 +1,8 @@
 import os
 import shutil
+from random import random
+
+random.seed(1987)
 
 def copy_images_from_file(image_list_file, destination_dir):
     """
