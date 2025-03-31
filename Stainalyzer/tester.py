@@ -1,6 +1,9 @@
 
 """
 Tester
+------
+
+Placeholder.
 """
 
 ############################################################################################################
@@ -13,9 +16,12 @@ import cv2
 import tempfile
 import numpy as np
 import seaborn as sns
+from pathlib import Path
 from time import perf_counter
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
+
+from .loader import MetricTables
 
 ############################################################################################################
 ### Classes
@@ -39,7 +45,12 @@ class Tester:
         logger (object, optional): Logger for tracking testing progress and results.
     """
 
-    def __init__(self, model=None, test_data=None, metrics=None, logger=None):
+    def __init__(self,
+                 model_path : Path,
+                 model : Any = None,
+                 test_data : pd.DataFrame = None,
+                 metrics : pd.DataFrame = None,
+                 logger : pd.DataFrame = None):
         """
         Initialize the Tester class.
 
@@ -49,6 +60,7 @@ class Tester:
             metrics (dict, optional): Evaluation metrics to use. Default is None.
             logger (object, optional): Logger for tracking progress. Default is None.
         """
+        self.model_path = model_path if model_path.exist() else None
         self.model = model  # The trained model to be tested
         self.test_data = test_data  # The dataset to evaluate the model on
         self.metrics = metrics if metrics else {}  # Default to an empty dictionary if no metrics are provided
@@ -218,8 +230,24 @@ class Tester:
         print(f"[EVALUATION COMPLETE]: Metrics calculated: {metrics}")
         return metrics
 
-    def interpolate(self):
-        pass
+    def execute(self):
+        """
+        Placeholder
+
+        Returns:
+            Placeholder: Placeholder.
+
+        Raises:
+            Placeholder: Placeholder.
+        """
+        
+        # Calculate "Cell" tables
+        cell_path = self.model_path / "1_cell"
+        cell_path.mkdir(parents=True, exist_ok=True)
+        metric_tables = MetricTables()
+        metric_tables.create_cell_tables()
+
+
 
     def compare(self, other_model, metric='Wasserstein', **kwargs):
         """
@@ -384,5 +412,11 @@ class Tester:
             f")"
         )
 
+
+if __name__ == "__main__":
+
+    results_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
+    tester = Tester(results_path)
+    tester.execute()
 
    
