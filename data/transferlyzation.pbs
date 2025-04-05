@@ -13,15 +13,15 @@
 #PBS -W umask=002
 
 #PBS -l flags=USER_NAMESPACE
-#PBS -l nodes=1:ppn=4
+#PBS -l nodes=1:ppn=2
 #PBS -l mem=16gb
-#PBS -l walltime=8:00:00
+#PBS -l walltime=4:00:00
 
 # cd $PBS_O_WORKDIR
 
 # Navigate to the directory where the .def file is stored
-cd ~/projects/Stainalyzer/data/
+cd /storage2/egusmao/projects/Stainalyzer/data/
 
 # Uncompress Control
-./cocoon.sh decompress ./DAB_IMIP_Tratamento_Clean.tar.gz
+./transferlyzation.sh "to_home"
 

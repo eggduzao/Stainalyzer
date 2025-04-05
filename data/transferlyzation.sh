@@ -3,11 +3,11 @@
 # Set your variables here
 CLUSTER_USER="egusmao"  # Your cluster username
 CLUSTER_ADDRESS="192.168.25.2"  # Cluster IP address
-CLUSTER_PATH="/storage2/egusmao/projects/Stainalyzer/data/"
-HOME_PATH="/Users/egg/Projects/Stainalyzer/data/"
+CLUSTER_PATH="/storage2/egusmao/projects/Stainalyzer/data/results/"
+HOME_PATH="/Users/egg/cluster_projects/projects/Stainalyzer/data/results/"
 
 # Data file name
-DATA_FILE="DAB_IMIP_Tratamento_Clean.tar.gz"
+DATA_FILE="Neila_DAB"
 
 # Function to transfer data to the cluster (resumable)
 to_cluster() {
