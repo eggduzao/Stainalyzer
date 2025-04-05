@@ -11,17 +11,20 @@ Placeholder.
 ############################################################################################################
 
 import io
-import os
-import cv2
+import sys
 import tempfile
 import numpy as np
+import pandas as pd
 import seaborn as sns
 from pathlib import Path
 from time import perf_counter
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
+from typing import Any, List, Dict
+from collections import OrderedDict
 
 from .loader import MetricTables
+from .dataset_visualization import VizPlots
 
 ############################################################################################################
 ### Classes
@@ -60,7 +63,7 @@ class Tester:
             metrics (dict, optional): Evaluation metrics to use. Default is None.
             logger (object, optional): Logger for tracking progress. Default is None.
         """
-        self.model_path = model_path if model_path.exist() else None
+        self.model_path = model_path if model_path.exists() else None
         self.model = model  # The trained model to be tested
         self.test_data = test_data  # The dataset to evaluate the model on
         self.metrics = metrics if metrics else {}  # Default to an empty dictionary if no metrics are provided
@@ -245,9 +248,7 @@ class Tester:
         cell_path = self.model_path / "1_cell"
         cell_path.mkdir(parents=True, exist_ok=True)
         metric_tables = MetricTables()
-        metric_tables.create_cell_tables()
-
-
+        metric_tables.create_cell_tables(output_path=cell_path)
 
     def compare(self, other_model, metric='Wasserstein', **kwargs):
         """
@@ -296,6 +297,19 @@ class Tester:
         print(f"[COMPARISON COMPLETE]: Metric used: {metric}, Distance/Score: {distance:.4f}")
 
         return distance
+
+    def plotter(self, input_file_name : Path, output_file_name : Path = None):
+        """
+        # df = pd.read_csv("your_file.tsv", sep="\t", header=None)
+        # df = pd.read_csv("your_file.tsv", sep="\t", encoding="utf-8")
+        """
+
+        # Plotting Test
+        v = VizPlots()
+        data_frame = pd.read_csv(input_file_name, sep = "\t", index_col=0)
+        v.heatmap(data_frame, normalize=True, bin_rows=50, output_file_name = output_file_name)
+
+
 
     def generate_report(self, output_file=None):
         """
@@ -415,8 +429,22 @@ class Tester:
 
 if __name__ == "__main__":
 
+    # Tables
     results_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
     tester = Tester(results_path)
-    tester.execute()
+    #tester.execute()
+
+    # Plots
+    table_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tsv"
+    output_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tiff"
+    tester.plotter(table_path, output_path)
+
+
+
+
+
+
+
+
 
    
