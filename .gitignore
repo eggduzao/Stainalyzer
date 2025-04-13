@@ -39,7 +39,8 @@ notebooks/Real-ESRGAN/
 notebooks/ZoeDepth/
 
 # References
-docs/references/
+docs/references/Image_Learning_Datasets/
+docs/references/Image_Learning_Papers/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
