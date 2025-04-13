@@ -1,0 +1,6 @@
+Category 1:       43
+Category 2:        2
+Category 3:       18
+Category 4:        0
+Category 5:        0
+Category 6:       42
