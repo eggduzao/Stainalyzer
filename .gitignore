@@ -27,8 +27,8 @@ data/interim/Neila_DAB/output_test
 data/interim/Neila_DAB/selected_controle
 
 # Processed Data
-data/processed/Neila_DAB/DAB_Grupo_Controle_Clean
-data/processed/Neila_DAB/DAB_IMIP_Tratamento_Clean
+data/processed/Neila_DAB/DAB_Grupo_Controle_Clean/
+data/processed/Neila_DAB/DAB_IMIP_Tratamento_Clean/
 
 # Results Data
 data/results/Neila_DAB/DAB_Grupo_Controle/
@@ -41,6 +41,9 @@ notebooks/ZoeDepth/
 # References
 docs/references/Image_Learning_Datasets/
 docs/references/Image_Learning_Papers/
+
+# Images to Enhance
+supplementary_data/images_to_enhance/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
