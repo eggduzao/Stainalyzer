@@ -1,5 +1,41 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
 
-# If you ever change your mind about leaving it all behind
-# Remember
-# Remember
-# No Geography
+[project]
+name = "stainalyzer"
+version = "0.1.0"
+description = "A lightweight toolkit for histological image analysis"
+authors = [
+    { name = "Eduardo Gade Gusmao", email = "eduardo@example.org" }
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "numpy>=1.22",
+    "opencv-python>=4.6",
+    "torch>=2.0",
+    "matplotlib>=3.5",
+    "scikit-image>=0.19",
+    "pandas>=1.4",
+    "PyYAML>=6.0"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests"
+]
+
+[tool.mypy]
+strict = true

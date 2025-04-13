@@ -1,4 +1,3 @@
-
 # Stainalyzer Package
 
 import os

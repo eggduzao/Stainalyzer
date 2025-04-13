@@ -1,0 +1,334 @@
+
+# Required - Core packages
+numpy>=2.0.2
+scipy>=1.13.1
+pandas>=2.2.3
+
+# Required - Machine learning (required)
+scikit-learn>=1.5.2
+scikit-image>=0.25.2
+umap-learn>=0.5.7
+
+# Required - Deep learning (required)
+torch>=2.6.0
+torchvision>=0.21.0
+deepTools>=0.1.9
+
+# Required - Image I/O and manipulation
+opencv-python>=4.10.0
+imageio>=2.37.0
+Pillow>=10.4.0
+colour>=0.1.5
+
+# Required - Image visualization
+matplotlib>=3.9.2
+matplotlib-base>=3.9.4
+seaborn>=0.13.2
+graphviz>=0.20.3
+plotly>=6.0.0
+
+# Required - Tabular results
+openpyxl>=3.1.5
+
+# Required - Symbolic mathematics
+sympy>=1.13.3
+
+# Required - For GUI Interface
+gradio>=5.16.1
+gradio_client>=1.7.0
+
+# Optional - Development-specific packages
+# black>=25.1.0
+# flake8>=7.2.0
+# isort>=6.0.1
+# pre-commit>=4.2.0
+# bump2version>=1.0.1
+# mypy>=1.15.0
+# tox>=4.25.0 # Overlaps with tox in testing
+# pylint>=3.3.6
+
+# Optional - Test-specific packages
+# pytest>=8.3.5
+# pytest-cov>=6.1.1
+# coverage>=7.8.0
+# hypothesis>=6.130.4
+# tox>=4.25.0 # Overlaps with tox in dev
+# faker>=37.1.0
+# responses>=0.25.7
+# tomli>=2.2.1
+# tomli_w>=1.2.0
+# tomlkit>=0.29.0
+
+# Optional - Docs-specific packages
+# sphinx>=8.2.1
+# sphinx-rtd-theme>=3.0.1
+# sphinx-autodoc-typehints>=3.1.0
+# sphinxcontrib-htmlhelp>=2.1.0
+# sphinxcontrib-serializinghtml>=1.1.10
+# myst-parser>=4.0.1
+# nbsphinx>=0.9.7
+# mkdocs>=1.6.1
+# mkdocs-material>=9.6.11
+# SciencePlots>=2.1.1
+
+# Optional - for interactive notebooks
+# jupyterlab>=4.3.5
+# jupyterlab_widgets>=3.0.13
+# nbclient>=0.10.2
+# nbconvert>=7.16.6
+# nbformat>=5.10.4
+
+# Optional - CLI enhancements
+# click>=8.1.8
+# rich>=13.9.4
+# asciitree>=0.3.3
+
+# Optional - Training & Testing Competing Methods
+# Biopython>=1.85
+# yaml>=6.0.2
+# selenium>=4.29.0
+# GEOparse>=2.0.4
+# beautifulsoup4>=4.13.3
+# matplotlib-inline>=0.1.7
+# pandocfilters>=1.5.0
+# imagecodecs>=2024.9.22
+# imageio>=2.37.0
+# imagesize>=0.5.1
+# pyaml_env>=1.2.2
+# PyYAML>=6.0.2
+
+# Optional - Advanced Pytorch (Competing methods)
+# botorch>=0.13.0
+# cuequivariance-torch>=0.3.0
+# flowtorch>=0.8
+# jax2torch>=0.0.7
+# laplace-torch>=0.2.2.2
+# libmetatensor-torch>=0.7.5
+# backpack-for-pytorch>=1.7.1
+# blitz-bayesian-pytorch>=0.2.8
+# curvlinops-for-pytorch>=2.0.1
+# efficientnet-pytorch>=0.7.1
+# fast-pytorch-kmeans>=0.2.2
+# fft-conv-pytorch>=1.2.0
+# gpytorch>=1.14
+# libopenvino-pytorch-frontend>=2025.0.0
+# pi-vae-pytorch>=1.1.0
+# pytest-pytorch>=0.2.1
+# pytorch-3dunet>=1.9.1
+# pytorch-cpu>=2.6.0
+# pytorch-ignite>=0.5.1
+# pytorch-lightning>=2.5.1
+# pytorch-metric-learning>=2.8.1
+# pytorch-ranger>=0.1.1
+# pytorch-tabnet>=4.1.0
+# pytorch-tabular>=1.1.1
+# pytorch>=2.6.0
+# pytorch_geometric-graphgym>=2.6.1
+# pytorch_geometric-modelhub>=2.6.1
+# pytorch_geometric>=2.6.1
+# pytorch_revgrad>=0.2.0
+# pytorch_revgrad>=0.2.0
+# pytorch_scatter>=2.1.2
+# pytorch_sparse>=0.6.18
+# pytorch_tabular>=1.1.1
+# segmentation-models-pytorch>=0.4.0
+# tensorly-torch>=0.4.0
+# torch-geometric>=2.6.1
+# torch-hd>=2.2.2
+# torch-nl>=0.3
+# torch-optimizer>=0.3.0
+# torch-runstats>=0.2.0
+# torch-scatter>=2.1.2
+# torch-simplify>=1.1.4
+# torch-tb-profiler>=0.4.3
+# torch_em>=0.7.9
+# torchbiggraph>=1.0.0
+# torchdata>=0.11.0
+# torchinfo>=1.8.0
+# torchio>=0.20.6
+# torchmanager>=1.3.4
+# torchmd-net>=0.0.0
+# torchmetrics>=1.5.2
+# torchseg>=0.0.1a4
+# torchsnapshot>=0.1.0
+# torchts>=0.1.1
+# torchtuples>=0.2.2
+# torchview>=0.2.6
+# torchvision-cpu>=0.2.2
+# torchvision-extra-decoders>=0.0.2
+# torchvision-tests>=0.21.0
+# torchx>=0.7.0
+# vector-quantize-pytorch>=0.2.2
+# vit-pytorch>=1.10.1
+
+# Optional - Advanced Tensorflow (Competing methods)
+# bert-tensorflow>=1.0.4
+# libopenvino-tensorflow-frontend>=2025.0.0
+# libopenvino-tensorflow-lite-frontend>=2025.0.0
+# libtensorflow>=2.18.0
+# libtensorflow_cc>=2.18.0
+# neptune-tensorflow-keras>=2.2.2
+# tensorflow-base>=2.18.0
+# tensorflow-cpu>=2.18.0
+# tensorflow-datasets>=4.8.3
+# tensorflow-estimator>=2.15.0
+# tensorflow-hub>=0.16.1
+# tensorflow-privacy>=0.8.11
+# tensorflow-probability>=0.25.0
+# tensorflow>=2.19.0
+# tensorflowonspark>=2.2.5
+
+# Optional - Advanced Tensors for Performance (Competing methods)
+# lovely-tensors>=0.1.18
+# pytensor-base>=2.30.3
+# pytensor>=2.30.3
+# python-metatensor-learn>=0.3.1
+# pyxtensor>=0.3.1
+# safetensors>=0.5.3
+# sympytensor>=1.3.1
+# tensorboard>=2.16.2
+# tensorboardx>=2.6.2.2
+# tensordict>=0.1.2+6de2db2
+# tensorizer>=2.9.2
+# tensorly>=0.8.1
+# tensorpac>=0.6.5
+# tensorpack>=0.11
+# xtensor-blas>=0.21.0
+# xtensor-python>=0.27.0
+# xtensor>=0.25.0
+
+# Optional - R-based analyses (Competing methods)
+# r-pcamixdata>=3.1
+# r-tsne>=0.1_3.1
+# r-nntensor>=1.3.0
+# r-safetensors>=0.1.2
+# r-tensor>=1.5
+# r-tensorflow>=2.16.0
+
+# Optional - Huggingface-style weights and models (Competing methods)
+# huggingface_hub>=0.30.1
+# transformers>=4.51.0
+# corex-ai-nlp-huggingface>=0.1.0
+# cria-llms-huggingface>=0.1.0
+# flytekitplugins-huggingface>=1.15.3
+# gigachain-huggingface>=0.0.3
+# gradio-huggingfacehub-search>=0.0.12
+# graphbook-huggingface>=0.0.6
+# huggingface-datasets-cocoapi-tools>=0.4.0
+# huggingface-download-cli>=1.0.3
+# huggingface-hub>=0.30.1
+# huggingface-rdf>=0.1.0
+# huggingface-sb3>=3.0
+# huggingface-text-data-analyzer>=1.1.0
+# huggingface-togetherai>=1.1.2
+# huggingface-tool>=v0.0.6
+# huggingface_hub>=0.30.1
+# kilroy-module-huggingface>=0.1.0
+# mlserver-huggingface>=1.7.0
+# pyspark-huggingface>=0.1.1
+# roboflow2huggingface>=0.0.22
+# shiertier-huggingface>=0.1.7
+# simpleraghuggingface>=0.1.0
+# streamlit-huggingface>=0.0.2
+# trulens-providers-huggingface>=1.4.9
+# vdk-huggingface>=0.1.1431637373
+# vertex-ai-huggingface-inference-toolkit>=0.0.2
+
+# Optional - HuggingFace Llama Support (Competing methods)
+# llama-index-embeddings-huggingface-api>=0.3.0
+# llama-index-embeddings-huggingface-optimum-intel>=0.3.0
+# llama-index-embeddings-huggingface-optimum>=0.3.0
+# llama-index-embeddings-huggingface>=0.4.0
+# llama-index-llms-huggingface-api>=0.4.1
+# llama-index-llms-huggingface>=0.5.0
+# llama-index-multi-modal-llms-huggingface>=0.4.2
+# llama-index-readers-huggingface-fs>=0.3.1
+# llama-index-utils-huggingface>=0.3.0
+
+# Optional - Napari plugin support (Competing methods)
+# magicgui>=0.10.0
+# napari>=0.5.6
+# cellfinder-napari>=0.0.20
+# cellpose-napari>=0.2.0
+# stardist-napari>=2024.8.6.1
+# devbio-napari>=0.8.1
+# napari-3d-counter>=0.4.2
+# napari-3d-ortho-viewer>=0.0.0
+# napari-accelerated-pixel-and-object-classification>=0.14.0
+# napari-aicsimageio>=0.7.2
+# napari-aideveloper>=0.0.4
+# napari-allencell-annotator>=2.0.1
+# napari-allencell-segmenter>=2.1.12
+# napari-annotate>=0.0.2
+# napari-annotation-project>=0.2.0
+# napari-annotator>=0.1.1
+# napari-annotatorj>=0.0.7
+# napari-bbox>=0.0.9
+# napari-bioformats>=0.1.2
+# napari-bioimageio>=0.1.3
+# napari-bioimageio>=0.1.3
+# napari-blob-detection>=0.0.2
+# napari-bud-cell-segmenter>=0.1.4
+# napari-cellseg3d>=0.2.2
+# napari-czann-segment>=0.0.16
+# napari-merge-stardist-masks>=0.1.1
+# napari-sam4is>=0.0.6
+# napari-sam>=0.4.13
+# napari-segment-anything>=0.1.4
+# napari-segment-blobs-and-things-with-membranes>=0.3.6
+# napari-segment>=0.3.12
+# napari-serialcellpose>=0.2.2
+# napari-vesicles-segmentation>=0.0.1
+
+# Optional - Bioimage Zoo (napari) Support
+# bioimageio-core>=0.7.0
+# bioimageio-engine>=0.1.3
+# bioimageio-spec>=0.5.3.5
+
+# Optional - Competing Method's Further Dependencies
+# accelerate>=0.33.0
+# datasets>=3.5.0
+# diffusers>=0.33.1
+# evaluate>=0.4.3
+# peft>=0.15.0
+# tokenizers>=0.21.1
+
+# Optional - Custom data exploration
+# great-expectations>=0.18.15
+# ydata-profiling>=4.16.0
+
+# Optional - Async I/O and concurrency frameworks
+# aiofiles>=24.1.0
+# aiohappyeyeballs>=2.6.1
+# aiohttp>=3.11.14
+# aiosignal>=1.3.2
+# anyio>=1.4.4
+# multidict>=6.2.0
+# nest_asyncio>=1.6.0
+# sniffio>=1.3.1
+# trio-websocket>=0.12.2
+
+# Optional - Type checking, introspection, and runtime typing support
+# mypy_extensions>=1.0.0
+# typing_extensions>=4.12.2
+# semantic-version>=2.10.0
+# exceptiongroup>=1.2.2
+
+# Optional - Linked data modeling and semantic schemas
+# linkml>=1.8.7
+# linkml-dataops>=0.1.0
+# linkml-owl>=0.3.0
+# linkml-renderer>=0.3.1
+# linkml-runtime>=1.8.3
+# jsonschema-specifications>=2024.10.1
+# isoduration>=20.11.0
+# jmespath>=1.0.1
+
+# Optional - Scientific and documentation utilities
+# bioc>=2.1
+# numpydoc>=1.66.3
+# defusedxml>=1.2.18
+
+# Optional - Build tools and packaging helpers
+# editables>=0.6.0
+# deprecation>=2.1.0

@@ -1,0 +1,29 @@
+Task	Description	Subtypes	Supported Modalities	Main Datasets	
+1. Identification	Recognizing objects within the cell (when able)	Golgi Apparatus	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Lipid Droplets	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Mitochondria	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Peroxisomes	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Early Endosomes	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Late Endosomes	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Lysosomes	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Endoplasmic Reticulum	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+1. Identification	Recognizing objects within the cell (when able)	Nucleolus (Nucleolar Region)	Brightfield, Fluorescent, Confocal, Mass Spec.	SNOW, NeurIPS Challenge, TissueNet, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Background Regions (when relevant)	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Nuclear Membrane	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Plasma Membrane	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Focal Adhesion (Filopodia)	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Nucleus	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Cytosol	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Extracellular Space	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+2. Segmentation	Segmentation of each cell and each cell's regions of interest	Staining as Segmentation*	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC	
+3. Phenotype Classification	Classification of Pathologies across a very high number of pathologies.	Multiple (depends on the dataset)	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, NeurIPS Challenge, TissueNet (thanks to Dr. NF Greenwald and Dr. D Van Valen), BCData, BBBC	
+4. Image Enhancement	Image treatment for multiple purposes	Denoising	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Super-resolution	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Deblurring	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Contrast enhancement	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Illumination standardization	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Artifact removal	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	Edge / texture enhancement	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+4. Image Enhancement	Image treatment for multiple purposes	General Enhancement (Multi-modal enhancement)	Brightfield, Fluorescent, Confocal, Mass Spec.	SegPath, SNOW, NeurIPS Challenge, TissueNet, DynamicNuclearNet, BCData, PanNuke, DSB2018, BBBC, DAB	
+5. Staining	Staining Image Analysis	Identification (boolean)	Brightfield, Fluorescent	SegPath, DAB	
+5. Staining	Staining Image Analysis	Quantification	Brightfield, Fluorescent	SegPath, DAB	
