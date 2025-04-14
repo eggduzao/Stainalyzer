@@ -175,43 +175,6 @@ class MetricTables:
 
     def __init__(self):
 
-
-nnU-Net
-Cellpose2
-HoVer-Net
-Mesmer
-Omnipose
-StarDist
-DeepCell
-UNet-S-STBM
-QuPath
-
-Att UNet
-UNet
-DeepLabV3P
-Cellpose (original)
-ilastik
-Fiji + DeepImageJ
-HistomicsTK
-CellProfiler4
-KIT-GE3
-Piximi
-
-CelloType
-SAM (Segment Anything)
-StableDiffusion
-RealEsrgan
-Zoe Depth
-ViT MoE
-NucCell GAN
-
-scikit-image
-PsdLabeling
-Watershed
-Otsu (Contrast Filtering)
-SVM
-Random Forest
-
         # All Segmentation (Cell and nucleus) Methods
         self.segmentation_methods = OrderedDict()
         self.segmentation_methods["GhostNet"] = 1
