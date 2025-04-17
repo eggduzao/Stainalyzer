@@ -24,7 +24,7 @@ from typing import Any, List, Dict
 from collections import OrderedDict
 
 from stainalyzer.data.loader import MetricTables
-from stainalyzer.util.dataset_visualization import VizPlots
+from stainalyzer.data.loader_visualization import VizPlots
 
 ############################################################################################################
 ### Classes

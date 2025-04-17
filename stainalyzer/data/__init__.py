@@ -139,6 +139,7 @@ from stainalyzer.data.pixel import Pixel
 from stainalyzer.data.loader import MetricTables
 from stainalyzer.data.loader_tester import LoaderTester
 from stainalyzer.data.input_data import TableReader
+from stainalyzer.data.loader_visualization import VizPlots
 
 # All packages
 __all__ = [
@@ -147,4 +148,5 @@ __all__ = [
 		   "MetricTables",
 		   "LoaderTester",
 		   "TableReader",
+		   "VizPlots",
 		   ]

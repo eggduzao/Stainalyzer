@@ -119,7 +119,7 @@ License: <Currently_Withheld>         |
 from pathlib import Path
 
 # from stainalyzer.core.main import main
-from stainalyzer.core.main import LoaderTester
+from stainalyzer.data.loader_tester import LoaderTester
 
 if __name__ == "__main__":
     input_path = Path("XXXXXXXXXXXXXXXXXXXXXXXXXX")
