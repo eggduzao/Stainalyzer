@@ -1,36 +1,19 @@
 """
 ====================================================================================================
-Stainalyzer Distributions Init Module
+Stainalyzer Util Main Module
 ====================================================================================================
 
 Overview
 --------
 
-Welcome to the OFFICIAL *Stainalyzer* API,
-your one-stop **bioimage-analysis** dream tool,
-powered by the ever-iconic GhostNet.
+- When you run 'python -m stainalyzer this script is called as a one-
+  click entry point for headless execution.
 
-This init script serves GLAMOUR, serves GRACE,
-and exposes the package's MAIN HIGH-LEVEL INTERFACES
-so that you can import what you need like a queen.
+- It loads your batch-processing workflow,  and executes your default 
+  pipeline seamlessly.
 
------
-Exposed functions:
-- segmentation: Tools for nuclear and cellular segmentation
-- quantification: Stain quantification tools
-- enhancement: Image enhancement like WOW
-- classification: Machine-learning based phenotypic classifiers
------
-
-Ideal for:
-- Biologists who slay
-- Data scientists who want DRAMA in their plots
-- Image nerds with a thirst for aesthetic segmentation
-
-Examples
---------
->>> from stainalyzer import segment_nuclei
->>> segment_nuclei("cute_microscopy_image.tif")
+- This file should remain: **minimal**, **clean**, and **fierce**. As
+  it is the top-level executable face of the package.
 
 
 Intended Use Cases
@@ -133,14 +116,7 @@ License: <Currently_Withheld>         |
 =======================================
 """
 
-# Distributions packages
-from stainalyzer.__version__ import __version__
-from stainalyzer.distributions.distribution import GaussianDistribution
-from stainalyzer.distributions.dirichlet import DirichletProcessMixtureModel
+from stainalyzer.core.main import main
 
-# All packages
-__all__ = [
-		   "__version__",
-		   "GaussianDistribution",
-		   "DirichletProcessMixtureModel",
-		   ]
+if __name__ == "__main__":
+    main()

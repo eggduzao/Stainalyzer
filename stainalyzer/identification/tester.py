@@ -23,14 +23,13 @@ import matplotlib.pyplot as plt
 from typing import Any, List, Dict
 from collections import OrderedDict
 
-from .loader import MetricTables
-from .dataset_visualization import VizPlots
+from stainalyzer.util.plots import Plots
 
 ############################################################################################################
 ### Classes
 ############################################################################################################
 
-class Tester:
+class IdentificationTester:
     """
     A class to manage the evaluation and testing process for trained distribution models.
 
@@ -309,8 +308,6 @@ class Tester:
         data_frame = pd.read_csv(input_file_name, sep = "\t", index_col=0)
         v.heatmap(data_frame, normalize=True, bin_rows=50, output_file_name = output_file_name)
 
-
-
     def generate_report(self, output_file=None):
         """
         Generate a report summarizing the evaluation results.
@@ -375,7 +372,6 @@ class Tester:
             print(f"[LOG]: {message}")
 
     def _generate(self):
-
         pass
         # numpy.random
 
@@ -426,25 +422,3 @@ class Tester:
             f")"
         )
 
-
-if __name__ == "__main__":
-
-    # Tables
-    results_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
-    tester = Tester(results_path)
-    #tester.execute()
-
-    # Plots
-    table_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tsv"
-    output_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tiff"
-    tester.plotter(table_path, output_path)
-
-
-
-
-
-
-
-
-
-   

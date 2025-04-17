@@ -11,8 +11,8 @@ Parses command-line arguments and performs core processing functions for the Sta
 
 import argparse
 
-from . import __version__
-from .trainer import Trainer
+from stainalyzer.__version__ import __version__
+from stainalyzer.staining.trainer import StainingTrainer
 
 ############################################################################################################
 ### Constants
@@ -31,7 +31,7 @@ def parse_args():
     argparse.Namespace
         An object containing the parsed command-line arguments.
 
-    Positional Arguments
+    Staining Positional Arguments
     --------------------
     input_training_folder : str
         Path to the input training folder.
@@ -40,7 +40,7 @@ def parse_args():
     root_name : str
         Root directory name used to structure the file paths.
 
-    Optional Arguments
+    Staining Optional Arguments
     ------------------
     --severity : float, optional
         Specifies the training severity. Default is 1.0.
@@ -133,12 +133,12 @@ def core_function(input_training_folder, output_training_folder, root_name, trai
     
     Notes
     -----
-    The actual training logic is handled by the `Trainer` class, which processes
+    The actual training logic is handled by the `StainingTrainer` class, which processes
     images and generates output in the specified directory.
 
     """
     try:
-        trainer = Trainer(
+        trainer = StainingTrainer(
             training_image_path=input_training_folder,
             severity=training_severity,
             root_name=root_name

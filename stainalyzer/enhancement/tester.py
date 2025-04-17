@@ -23,14 +23,13 @@ import matplotlib.pyplot as plt
 from typing import Any, List, Dict
 from collections import OrderedDict
 
-from .loader import MetricTables
-from .dataset_visualization import VizPlots
+from stainalyzer.util.plots import Plots
 
 ############################################################################################################
 ### Classes
 ############################################################################################################
 
-class Tester:
+class EnhancementTester:
     """
     A class to manage the evaluation and testing process for trained distribution models.
 
@@ -233,23 +232,6 @@ class Tester:
         print(f"[EVALUATION COMPLETE]: Metrics calculated: {metrics}")
         return metrics
 
-    def execute(self):
-        """
-        Placeholder
-
-        Returns:
-            Placeholder: Placeholder.
-
-        Raises:
-            Placeholder: Placeholder.
-        """
-        
-        # Calculate "Cell" tables
-        cell_path = self.model_path / "1_cell"
-        cell_path.mkdir(parents=True, exist_ok=True)
-        metric_tables = MetricTables()
-        metric_tables.create_cell_tables(output_path=cell_path)
-
     def compare(self, other_model, metric='Wasserstein', **kwargs):
         """
         Compare the performance of the current model with another model.
@@ -297,19 +279,6 @@ class Tester:
         print(f"[COMPARISON COMPLETE]: Metric used: {metric}, Distance/Score: {distance:.4f}")
 
         return distance
-
-    def plotter(self, input_file_name : Path, output_file_name : Path = None):
-        """
-        # df = pd.read_csv("your_file.tsv", sep="\t", header=None)
-        # df = pd.read_csv("your_file.tsv", sep="\t", encoding="utf-8")
-        """
-
-        # Plotting Test
-        v = VizPlots()
-        data_frame = pd.read_csv(input_file_name, sep = "\t", index_col=0)
-        v.heatmap(data_frame, normalize=True, bin_rows=50, output_file_name = output_file_name)
-
-
 
     def generate_report(self, output_file=None):
         """
@@ -375,7 +344,6 @@ class Tester:
             print(f"[LOG]: {message}")
 
     def _generate(self):
-
         pass
         # numpy.random
 
@@ -425,26 +393,3 @@ class Tester:
             f"Logger: {'Enabled' if self.logger else 'Disabled'}"
             f")"
         )
-
-
-if __name__ == "__main__":
-
-    # Tables
-    results_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
-    tester = Tester(results_path)
-    #tester.execute()
-
-    # Plots
-    table_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tsv"
-    output_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tiff"
-    tester.plotter(table_path, output_path)
-
-
-
-
-
-
-
-
-
-   

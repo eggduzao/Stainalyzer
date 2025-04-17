@@ -20,10 +20,10 @@ import numpy as np
 from scipy.linalg import sqrtm
 from collections import OrderedDict
 
-from .utils import ColorConverter, PlottingUtils, TripleInterval
-from .preprocessor import ImagePreprocessor
-from .distribution import GaussianDistribution
-from .filters import DABFilters, Mask
+from stainalyzer.utils.utils import ColorConverter, PlottingUtils, TripleInterval
+from stainalyzer.staining.preprocessor import StainingPreprocessor
+from stainalyzer.utils.distribution import GaussianDistribution
+from stainalyzer.utils.filters import DABFilters, Mask
 
 ############################################################################################################
 ### Constants
@@ -374,7 +374,7 @@ class DABDistribution:
             f"Covariance Matrix: {self.covariance}"
         )
 
-class Trainer:
+class StainingTrainer:
     """
     A class to handle the training process for a model using DABDistribution and a path to training images.
 
@@ -422,7 +422,7 @@ class Trainer:
 
     def __init__(self, dab_distribution=None, training_image_path=None, severity=None, root_name=None):
         """
-        Initializes the Trainer object with a DABDistribution instance, training image path, and severity parameter.
+        Initializes the StainingTrainer object with a DABDistribution instance, training image path, and severity parameter.
 
         Parameters:
         -----------

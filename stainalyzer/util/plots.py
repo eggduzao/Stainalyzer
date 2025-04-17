@@ -16,7 +16,7 @@ from math import ceil, sqrt
 from PIL import Image, ImageCms
 import matplotlib.pyplot as plt
 
-from stainalyzer.util.utils import ColorName, ColorConverter, PlottingUtils
+from stainalyzer.util.utils import ColorName, PlottingUtils, ColorConverter
 
 ############################################################################################################
 ### Constants
@@ -31,9 +31,9 @@ np.random.seed(SEED)
 ### Classes
 ############################################################################################################
 
-class Visualizations:
+class PlotVisualizations:
     """
-    Visualizations TODO DESCRIPTION
+    PlotVisualizations TODO DESCRIPTION
     """
 
     def __init__(self, color_name_path=None):

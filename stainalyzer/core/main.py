@@ -5,7 +5,7 @@ main
 Main entry point for the Stainalyzer tool.
 """
 
-from .core import core_function, parse_args
+from stainalyzer.core.core import core_function, parse_args
 
 def main():
     """

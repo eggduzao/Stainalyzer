@@ -924,19 +924,3 @@ class TripleInterval:
         return f"TripleInterval({self.intervals})"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -29,7 +29,7 @@ np.random.seed(SEED)
 ### Multivariate Gaussian Class
 ############################################################################################################
 
-class ImagePreprocessor:
+class ClassificationPreprocessor:
     """
     A class for preprocessing images, including CLAHE normalization, dynamic thresholding,
     SLIC segmentation, and K-means clustering.

@@ -16,7 +16,7 @@ import numpy as np
 from sympy import Interval
 from PIL import Image, ImageCms
 
-from .utils import PlottingUtils, TripleInterval
+from stainalyzer.util.utils import PlottingUtils, TripleInterval
 
 ############################################################################################################
 ### Classes

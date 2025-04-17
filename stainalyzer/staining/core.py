@@ -11,8 +11,10 @@ Parses command-line arguments and performs core processing functions for the Sta
 
 import argparse
 
-from . import __version__
-from .trainer import Trainer
+from stainalyzer.version import __version__
+from stainalyzer.staining.preprocessor import StainingPreprocessor
+from stainalyzer.staining.tester import StainingTester
+from stainalyzer.staining.trainer import DABDistribution, StainingTrainer
 
 ############################################################################################################
 ### Constants
@@ -138,7 +140,7 @@ def core_function(input_training_folder, output_training_folder, root_name, trai
 
     """
     try:
-        trainer = Trainer(
+        trainer = StainingTrainer(
             training_image_path=input_training_folder,
             severity=training_severity,
             root_name=root_name

@@ -29,7 +29,7 @@ np.random.seed(SEED)
 ### Multivariate Gaussian Class
 ############################################################################################################
 
-class ImagePreprocessor:
+class StainingPreprocessor:
     """
     A class for preprocessing images, including CLAHE normalization, dynamic thresholding,
     SLIC segmentation, and K-means clustering.
@@ -48,7 +48,7 @@ class ImagePreprocessor:
 
     def __init__(self, input_image, replace_black_param=None, clahe_params=None, slic_params=None, kmeans_params=None):
         """
-        Initialize the ImagePreprocessor class.
+        Initialize the StainingPreprocessor class.
 
         Parameters:
             input_image (str or numpy.ndarray): Path to the input image or a preloaded OpenCV image.
