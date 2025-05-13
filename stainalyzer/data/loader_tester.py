@@ -74,21 +74,20 @@ class LoaderTester:
             Placeholder: Placeholder.
         """
 
-        # Tables
-        results_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
-        tester = Tester(results_path)
-        #tester.execute()
+        # Input / Output
+        results_path = Path(self.output_path)
+        self.output_path.mkdir(parents=True, exist_ok=True)
 
         # Calculate "Cell" tables
-        cell_path = self.model_path / "1_cell"
-        cell_path.mkdir(parents=True, exist_ok=True)
+        segmentation_path = self.output_path / "1_segmentation"
+        segmentation_path.mkdir(parents=True, exist_ok=True)
         metric_tables = MetricTables()
-        metric_tables.create_cell_tables(output_path=cell_path)
+        metric_tables.create_cell_tables(output_path=segmentation_path)
 
         # Plots
-        table_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tsv"
-        output_path = results_path / "1_cell" / "1_SegPath_Cell_F1SEG.tiff"
-        tester.plotter(table_path, output_path)
+        # table_path = segmentation_path / "1_SegPath_Cell_F1SEG.tsv"
+        # output_path = segmentation_path / "1_SegPath_Cell_F1SEG.tiff"
+        # tester.plotter(table_path, output_path)
 
     def plotter(self, input_file_name : Path, output_file_name : Path = None):
         """

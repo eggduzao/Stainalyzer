@@ -122,7 +122,7 @@ from pathlib import Path
 from stainalyzer.data.loader_tester import LoaderTester
 
 if __name__ == "__main__":
-    input_path = Path("XXXXXXXXXXXXXXXXXXXXXXXXXX")
-    output_path = Path("XXXXXXXXXXXXXXXXXXXXXXXXXX")
+    input_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
+    output_path = Path("/Users/egg/Projects/Stainalyzer/data/results/")
     lt = LoaderTester(input_path, output_path)
     lt.main()

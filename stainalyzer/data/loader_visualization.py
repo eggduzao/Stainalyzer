@@ -149,6 +149,7 @@ import matplotlib.font_manager as fm
 from collections import OrderedDict, Counter
 from typing import Generator, List, Any, Callable, Dict, Tuple, Optional
 
+
 ###############################################################################
 # Constants
 ###############################################################################
@@ -491,6 +492,276 @@ class VizPlots:
             "null_hypothesis": "The two samples have equal variance"
         }
 
+    def heatmap(self,
+        data: pd.DataFrame,
+        output_path: Path,
+        row_names: Optional[List[str]] = None,
+        col_names: Optional[List[str]] = None,
+        normalize: bool = False,
+        title: Optional[str] = None,
+        xlabel: Optional[str] = None,
+        ylabel: Optional[str] = None,
+        palette: str = "default",
+        log_scale: bool = False,
+        xrotation: int = 0,
+        yrotation: int = 0,
+    ) -> None:
+        """
+        Generate and save a customizable heatmap from a pandas DataFrame.
+
+        Parameters
+        ----------
+        data : pd.DataFrame
+            The input DataFrame where rows represent methods and columns represent metrics.
+            Must contain a "Method" column to be used as index.
+        output_path : Path
+            The path (including filename) where the heatmap image will be saved.
+        row_names : List[str], optional
+            Custom row labels to display instead of the DataFrame index.
+        col_names : List[str], optional
+            Custom column labels to display instead of the DataFrame columns.
+        normalize : bool, default=False
+            Whether to normalize each column to the [0, 1] range for visual comparability.
+        title : str, optional
+            Title of the heatmap plot.
+        xlabel : str, optional
+            Label for the x-axis (columns/metrics).
+        ylabel : str, optional
+            Label for the y-axis (rows/methods).
+        palette : str, default="default"
+            Name of the color palette to use. If "default", uses a blue-red diverging palette.
+        log_scale : bool, default=False
+            Whether to log-transform the data before plotting (not yet implemented).
+        xrotation : int, default=0
+            Rotation angle for x-axis tick labels.
+        yrotation : int, default=0
+            Rotation angle for y-axis tick labels.
+
+        Returns
+        -------
+        None
+            Saves the heatmap to the specified output_path.
+        """
+        df = data.copy()
+
+        # Set method names as index
+        df.set_index("Method", inplace=True)
+
+        # Optional normalization per column
+        df_normalized = df.copy()
+        if normalize:
+            for col in df.columns:
+                df_normalized[col] = (df[col] - df[col].min()) / (df[col].max() - df[col].min())
+
+        # Apply log scale (future expansion placeholder)
+        if log_scale:
+            raise NotImplementedError("Log scale transformation is not yet implemented.")
+
+        # Override row and column labels if provided
+        if row_names:
+            df_normalized.index = row_names
+        if col_names:
+            df_normalized.columns = col_names
+
+        # Choose a colormap
+        if palette == "default":
+            cmap = sns.diverging_palette(250, 30, l=65, center="light", as_cmap=True)
+        else:
+            cmap = palette
+
+        # Create a figure
+        plt.figure(figsize=(12, 14))
+        sns.heatmap(df_normalized, annot=False, cmap=cmap, linewidths=0.5, linecolor="gray")
+
+        # Set labels and title
+        plt.title(title or "", fontsize=16, fontweight='bold', pad=15)
+        plt.xlabel(xlabel or "Metrics", fontsize=14)
+        plt.ylabel(ylabel or "Methods", fontsize=14)
+
+        # Ticks and layout
+        plt.xticks(rotation=xrotation, ha="right")
+        plt.yticks(rotation=yrotation)
+
+        # Save to file
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        fig.savefig(output_path, dpi=300, format=output_path.suffix[1:], bbox_inches="tight")
+        plt.close()
+
+    def heatmap(
+        data: pd.DataFrame,
+        direction_vector: List[bool],
+        output_path: Path,
+        row_names: Optional[List[str]] = None,
+        col_names: Optional[List[str]] = None,
+        normalize: bool = False,
+        title: Optional[str] = None,
+        xlabel: Optional[str] = None,
+        ylabel: Optional[str] = None,
+        palette: str = "default",
+        log_scale: bool = False,
+        xrotation: int = 0,
+        yrotation: int = 0,
+        heatmap_row: bool = True,
+        heatmap_col: bool = True,
+        display_values: bool = False,
+        sort_col_by_average: bool = True,
+    ) -> None:
+        data = data.copy()
+        data.set_index("Method", inplace=True)
+
+        if log_scale:
+            data = np.log(data.replace(0, np.nan)).fillna(0)
+
+        data_normalized = data.copy()
+        if normalize:
+            for col in data.columns:
+                data_normalized[col] = (data[col] - data[col].min()) / (data[col].max() - data[col].min())
+
+        for i, ascending in enumerate(direction_vector):
+            if not ascending:
+                data_normalized.iloc[i] = 1 - data_normalized.iloc[i]
+
+        if sort_col_by_average:
+            avg_row = data_normalized.mean(axis=0)
+            sorted_cols = avg_row.sort_values(ascending=False).index.tolist()
+            data_normalized = data_normalized[sorted_cols]
+
+            if col_names:
+                col_rename_map = dict(zip(data.columns, col_names))
+                sorted_names = [col_rename_map[c] for c in sorted_cols if c in col_rename_map]
+                data_normalized.columns = sorted_names
+
+        if row_names:
+            data_normalized.index = row_names
+
+        if palette == "default":
+            cmap = sns.diverging_palette(250, 30, l=65, center="light", as_cmap=True)
+        else:
+            cmap = palette
+
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        if heatmap_row or heatmap_col:
+            g = sns.clustermap(
+                data_normalized,
+                cmap=cmap,
+                row_cluster=heatmap_row,
+                col_cluster=heatmap_col,
+                linewidths=0.5,
+                linecolor="gray",
+                figsize=(12, 14),
+                xticklabels=True,
+                yticklabels=True,
+                annot=display_values,
+            )
+
+            g.ax_heatmap.set_title(title or "", fontsize=16, fontweight='bold', pad=15)
+            g.ax_heatmap.set_xlabel(xlabel or "Metrics", fontsize=14)
+            g.ax_heatmap.set_ylabel(ylabel or "Methods", fontsize=14)
+
+            plt.setp(g.ax_heatmap.get_xticklabels(), rotation=xrotation, ha="right")
+            plt.setp(g.ax_heatmap.get_yticklabels(), rotation=yrotation)
+
+            g.savefig(output_path, dpi=300, format=output_path.suffix[1:], bbox_inches="tight")
+            plt.close()
+        else:
+            fig = plt.figure(figsize=(12, 14))
+            sns.heatmap(
+                data_normalized,
+                annot=display_values,
+                cmap=cmap,
+                linewidths=0.5,
+                linecolor="gray"
+            )
+
+            plt.title(title or "", fontsize=16, fontweight='bold', pad=15)
+            plt.xlabel(xlabel or "Metrics", fontsize=14)
+            plt.ylabel(ylabel or "Methods", fontsize=14)
+            plt.xticks(rotation=xrotation, ha="right")
+            plt.yticks(rotation=yrotation)
+            plt.tight_layout()
+            fig.savefig(output_path, dpi=300, format=output_path.suffix[1:], bbox_inches="tight")
+            plt.close()
+
+    """
+    def heatmap(
+        data: pd.DataFrame,
+        direction_vector: List[bool],
+        output_path: Path,
+        row_names: Optional[List[str]] = None,
+        col_names: Optional[List[str]] = None,
+        normalize: bool = False,
+        title: Optional[str] = None,
+        xlabel: Optional[str] = None,
+        ylabel: Optional[str] = None,
+        palette: str = "default",
+        log_scale: bool = False,
+        xrotation: int = 0,
+        yrotation: int = 0,
+        heatmap_row: bool = True,
+        heatmap_col: bool = True,
+        display_values: bool = False,
+        sort_col_by_average: bool = True,
+    ) -> None:
+        data = data.copy()
+        data.set_index("Method", inplace=True)
+
+        if log_scale:
+            data = np.log(data.replace(0, np.nan)).fillna(0)
+
+        data_normalized = data.copy()
+        if normalize:
+            for col in data.columns:
+                data_normalized[col] = (data[col] - data[col].min()) / (data[col].max() - data[col].min())
+
+        if row_names:
+            data_normalized.index = row_names
+        if col_names:
+            data_normalized.columns = col_names
+
+        if palette == "default":
+            cmap = sns.diverging_palette(250, 30, l=65, center="light", as_cmap=True)
+        else:
+            cmap = palette
+
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+
+        if heatmap_row or heatmap_col:
+            g = sns.clustermap(
+                data_normalized,
+                cmap=cmap,
+                row_cluster=heatmap_row,
+                col_cluster=heatmap_col,
+                linewidths=0.5,
+                linecolor="gray",
+                figsize=(12, 14),
+                xticklabels=True,
+                yticklabels=True,
+            )
+
+            g.ax_heatmap.set_title(title or "", fontsize=16, fontweight='bold', pad=15)
+            g.ax_heatmap.set_xlabel(xlabel or "Metrics", fontsize=14)
+            g.ax_heatmap.set_ylabel(ylabel or "Methods", fontsize=14)
+
+            plt.setp(g.ax_heatmap.get_xticklabels(), rotation=xrotation, ha="right")
+            plt.setp(g.ax_heatmap.get_yticklabels(), rotation=yrotation)
+
+            g.savefig(output_path, dpi=300, format=output_path.suffix[1:], bbox_inches="tight")
+            plt.close()
+        else:
+            fig = plt.figure(figsize=(12, 14))
+            sns.heatmap(data_normalized, annot=False, cmap=cmap, linewidths=0.5, linecolor="gray")
+
+            plt.title(title or "", fontsize=16, fontweight='bold', pad=15)
+            plt.xlabel(xlabel or "Metrics", fontsize=14)
+            plt.ylabel(ylabel or "Methods", fontsize=14)
+            plt.xticks(rotation=xrotation, ha="right")
+            plt.yticks(rotation=yrotation)
+            plt.tight_layout()
+            fig.savefig(output_path, dpi=300, format=output_path.suffix[1:], bbox_inches="tight")
+            plt.close()
+    """
+
     def pie_chart(self, values=None, labels=None, data=None, is_percent=False, plot_as_percent=False):
         """
         Generates a pie chart with optional data transformation to percentages.
@@ -612,11 +883,11 @@ class VizPlots:
                 bbox=dict(boxstyle="round,pad=0.3", fc="lightyellow", ec="black", lw=0.5)
             )
 
-        if plot_title id not None:
+        if plot_title is not None:
             ax.set_title(plot_title)
-        if x_title id not None:
+        if x_title is not None:
             ax.set_xlabel(x_title)
-        if y_title id not None:
+        if y_title is not None:
             ax.set_ylabel(y_title)
 
         ax.set_xticks(x_pos)

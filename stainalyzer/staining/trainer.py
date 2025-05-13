@@ -20,10 +20,10 @@ import numpy as np
 from scipy.linalg import sqrtm
 from collections import OrderedDict
 
-from stainalyzer.utils.utils import ColorConverter, PlottingUtils, TripleInterval
+from stainalyzer.util.utils import ColorConverter, PlottingUtils, TripleInterval
 from stainalyzer.staining.preprocessor import StainingPreprocessor
-from stainalyzer.utils.distribution import GaussianDistribution
-from stainalyzer.utils.filters import DABFilters, Mask
+from stainalyzer.distributions.distribution import GaussianDistribution
+from stainalyzer.util.filters import DABFilters, Mask
 
 ############################################################################################################
 ### Constants

@@ -538,4 +538,3 @@ def calculate_color_distributions(rgb_image, hsv_image, lab_image, quantized_ima
     return real_rgb_distributions, real_hsv_distributions, real_lab_distributions, quantized_rgb_distributions, quantized_hsv_distributions, quantized_lab_distributions
 
 """
-

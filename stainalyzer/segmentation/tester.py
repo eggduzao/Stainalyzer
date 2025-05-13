@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 from typing import Any, List, Dict
 from collections import OrderedDict
 
-from stainalyzer.util.plots import Plots
+from stainalyzer.util.plots import PlotVisualizations
 
 ############################################################################################################
 ### Classes
