@@ -1,51 +1,4 @@
 
-# Raw Data
-data/raw/Neila_DAB/DAB_Grupo_Controle
-data/raw/Neila_DAB/DAB_IMIP_Tratamento
-data/raw/SegPath/aSMA_SmoothMuscle
-data/raw/SegPath/CD3CD20_Lymphocyte
-data/raw/SegPath/aSMA_SmoothMuscle.tar.gz
-data/raw/SegPath/CD3CD20_Lymphocyte.tar.gz
-data/raw/SegPath/CD45RB_Leukocyte.tar.gz
-data/raw/SegPath/CD235a_RBC.tar.gz
-data/raw/SegPath/ERG_Endothelium.tar.gz
-data/raw/SegPath/MIST1_PlasmaCell.tar.gz
-data/raw/SegPath/MNDA_MyeloidCell.tar.gz
-data/raw/SegPath/panCK_Epithelium.tar.gz
-
-# Interim Data
-data/interim/Neila_DAB/dab_negative
-data/interim/Neila_DAB/dab_positive
-data/interim/Neila_DAB/DAB_Training_Input
-data/interim/Neila_DAB/DAB_Training_Output
-data/interim/Neila_DAB/DAB_Training_Output_Real
-data/interim/Neila_DAB/examples
-data/interim/Neila_DAB/input
-data/interim/Neila_DAB/input_test
-data/interim/Neila_DAB/output
-data/interim/Neila_DAB/output_test
-data/interim/Neila_DAB/selected_controle
-
-# Processed Data
-data/processed/Neila_DAB/DAB_Grupo_Controle_Clean/
-data/processed/Neila_DAB/DAB_IMIP_Tratamento_Clean/
-
-# Results Data
-data/results/Neila_DAB/DAB_Grupo_Controle/
-data/results/Neila_DAB/DAB_IMIP_Tratamento/
-
-# Big Weights
-notebooks/Real-ESRGAN/
-notebooks/ZoeDepth/
-
-# References
-docs/references/Image_Learning_Datasets/
-docs/references/Image_Learning_Papers/
-docs/references/mavropoulos2023/
-
-# Images to Enhance
-supplementary_data/images_to_enhance/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -208,3 +161,49 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# MAC OS X
+.DS_Store
+
+# Data
+data/interim/*
+!data/interim/__init__.py
+data/processed/*
+!data/processed/__init__.py
+data/raw/*
+!data/raw/__init__.py
+data/rules/*
+!data/rules/__init__.py
+data/received/*
+!data/received/__init__.py
+
+# docs
+docs/build
+
+# publication
+publication/
+
+# _deposit
+_deposit/
+
+mkdir -p test_core
+mkdir -p test_io
+mkdir -p test_classification
+mkdir -p test_distributions
+mkdir -p test_enhancement
+mkdir -p test_gui
+mkdir -p test_identification
+mkdir -p test_segmentation
+mkdir -p test_staining
+mkdir -p test_util
+
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_core
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_io
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_classification
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_distributions
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_enhancement
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_gui
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_identification
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_segmentation
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_staining
+cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_util
