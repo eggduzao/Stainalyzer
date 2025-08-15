@@ -172,10 +172,10 @@ data/processed/*
 !data/processed/__init__.py
 data/raw/*
 !data/raw/__init__.py
+data/results/*
+!data/results/__init__.py
 data/rules/*
 !data/rules/__init__.py
-data/received/*
-!data/received/__init__.py
 
 # docs
 docs/build
