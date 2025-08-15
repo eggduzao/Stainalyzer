@@ -185,25 +185,3 @@ publication/
 
 # _deposit
 _deposit/
-
-mkdir -p test_core
-mkdir -p test_io
-mkdir -p test_classification
-mkdir -p test_distributions
-mkdir -p test_enhancement
-mkdir -p test_gui
-mkdir -p test_identification
-mkdir -p test_segmentation
-mkdir -p test_staining
-mkdir -p test_util
-
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_core
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_io
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_classification
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_distributions
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_enhancement
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_gui
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_identification
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_segmentation
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_staining
-cp /Users/egg/Projects/Stainalyzer/stainalyzer/__init__.py test_util
