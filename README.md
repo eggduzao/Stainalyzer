@@ -6,7 +6,7 @@
 Welcome to **Stainalyzer**, an advanced and efficient tool designed to analyze stains and regions of interest in microscopy images. Stainalyzer is particularly useful for **histology** (brightfield images), **fluorescence microscopy** (FISH), and **confocal imaging**. This tool leverages state-of-the-art image processing techniques to detect and quantify stains, assisting researchers and clinicians in their analyses.
 
 This repository serves as the official source code for Stainalyzer, providing comprehensive documentation, installation instructions, usage guidelines, and development notes.
-
+ 
 ---
 
 ## Features
