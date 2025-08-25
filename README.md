@@ -232,7 +232,7 @@ If you encounter any issues, please report them in the GitHub **Issues** section
 
 ---
 
-## License
+## License 
 
 Stainalyzer is released under the **MIT License**, which allows for modification, distribution, and private use with proper attribution.
 
