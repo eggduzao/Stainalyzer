@@ -179,12 +179,10 @@ data/rules/*
 
 # docs
 docs/build
+docs/paper
 
 # publication
 publication/
 
 # _deposit
 _deposit/
-
-# org
-org/
