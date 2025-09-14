@@ -180,7 +180,7 @@ data/rules/*
 # docs
 docs/build
 docs/paper
-Docs/org
+docs/org
 
 # publication
 publication/
