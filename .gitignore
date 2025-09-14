@@ -167,19 +167,20 @@ cython_debug/
 
 # Data
 data/interim/*
-!data/interim/__init__.py
+!data/interim/README.md
 data/processed/*
-!data/processed/__init__.py
+!data/processed/README.md
 data/raw/*
-!data/raw/__init__.py
+!data/raw/README.md
 data/results/*
-!data/results/__init__.py
+!data/results/README.md
 data/rules/*
-!data/rules/__init__.py
+!data/rules/README.md
 
 # docs
 docs/build
 docs/paper
+Docs/org
 
 # publication
 publication/
